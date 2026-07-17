@@ -1,0 +1,2419 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curwic — Management Consulting & Personal Coaching</title>
+<meta name="description" content="Curwic runs two practices: management consulting for businesses, and 1:1 coaching for individuals building skills and career growth. Same diagnostic-first method, two distinct services.">
+<meta property="og:title" content="Curwic — Consulting for businesses. Coaching for individuals.">
+<meta property="og:description" content="Two practices, one method: management consulting for organisations, and personal coaching for individuals who want to build skills and accelerate their growth.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230b0e1e'/%3E%3Ctext x='50' y='66' font-family='Arial,sans-serif' font-weight='800' font-size='52' fill='%234453f5' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Curwic",
+  "description": "Curwic runs two distinct practices: management consulting for businesses and organisations, and 1:1 coaching for individuals building skills and accelerating personal and professional growth.",
+  "email": "hello@curwic.space",
+  "url": "https://curwic.space"
+}
+</script>
+<style>
+
+:root,
+[data-theme="dark"] {
+  --bg: #0b0e1a;
+  --bg-soft: #10142400;
+  --surface: #121628;
+  --surface-soft: #171c33;
+  --border: rgba(210,216,240,0.14);
+  --border-strong: rgba(210,216,240,0.24);
+  --text: #eef0fa;
+  --mist: rgba(238,240,250,0.66);
+  --dim: rgba(238,240,250,0.42);
+
+  --accent: #4453f5;
+  --accent-deep: #2a37c9;
+  --accent-tint: #7c87ff;
+  --accent-soft: rgba(68,83,245,0.16);
+  --accent-soft-strong: rgba(68,83,245,0.28);
+
+  --gold: #d8b46a;
+  --gold-soft: rgba(216,180,106,0.14);
+
+  --good: #34c98f;
+  --warn: #ff6b7f;
+
+  --navy: #0b0e1e;
+  --navy-soft: #141936;
+
+  --shadow: 0 24px 60px rgba(2,4,16,0.55);
+  --grain-opacity: 0.02;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+}
+
+[data-theme="light"] {
+  --bg: #f4f5fa;
+  --bg-soft: #eceef8;
+  --surface: #ffffff;
+  --surface-soft: #f3f4fb;
+  --border: rgba(14,19,48,0.09);
+  --border-strong: rgba(14,19,48,0.15);
+  --text: #0d1130;
+  --mist: rgba(13,17,48,0.62);
+  --dim: rgba(13,17,48,0.4);
+
+  --accent: #3b4cf0;
+  --accent-deep: #232fc4;
+  --accent-tint: #3b4cf0;
+  --accent-soft: rgba(59,76,240,0.08);
+  --accent-soft-strong: rgba(59,76,240,0.14);
+
+  --gold: #a97d1f;
+  --gold-soft: rgba(169,125,31,0.10);
+
+  --good: #1f9c6e;
+  --warn: #d93e58;
+
+  --navy: #0d1130;
+  --navy-soft: #161b3d;
+
+  --shadow: 0 20px 50px rgba(15,20,60,0.09);
+  --grain-opacity: 0;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background 0.35s ease, color 0.35s ease;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: var(--grain-opacity);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}
+
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+button { font-family: inherit; }
+
+.container { max-width: 1180px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+.label {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.label::before { content: '↘'; font-size: 13px; font-weight: 900; }
+.section-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: clamp(2rem, 4.2vw, 3.1rem);
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+}
+.section-title em { font-style: normal; color: var(--accent); }
+.section-body {
+  margin-top: 20px;
+  max-width: 520px;
+  font-weight: 400;
+  color: var(--mist);
+  line-height: 1.8;
+}
+
+/* ── CUSTOM CURSOR ── */
+.cursor-dot, .cursor-ring {
+  position: fixed; top: 0; left: 0; z-index: 900; pointer-events: none;
+  border-radius: 50%; transform: translate(-50%, -50%);
+  transition: opacity 0.2s ease;
+}
+.cursor-dot { width: 5px; height: 5px; background: var(--accent); }
+.cursor-ring { width: 32px; height: 32px; border: 1px solid var(--border-strong); transition: transform 0.15s ease, opacity 0.2s ease, border-color 0.2s ease; }
+.cursor-ring.hovering { transform: translate(-50%, -50%) scale(1.6); border-color: var(--accent); }
+@media (hover: none), (pointer: coarse) { .cursor-dot, .cursor-ring { display: none; } }
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  height: 76px;
+  background: color-mix(in srgb, var(--bg) 85%, transparent);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.35s ease, border-color 0.35s ease;
+}
+.nav-logo { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 18px; letter-spacing: -0.02em; text-decoration: none; cursor: pointer; text-transform: uppercase; }
+.nav-links { display: flex; align-items: center; gap: 30px; list-style: none; }
+.nav-links a { font-size: 13px; font-weight: 600; color: var(--mist); text-decoration: none; letter-spacing: 0.01em; transition: color 0.2s; cursor: pointer; text-transform: uppercase; }
+.nav-links a:hover, .nav-links a.current { color: var(--accent); }
+
+.nav-right { display: flex; align-items: center; gap: 14px; }
+.nav-socials { display: flex; align-items: center; gap: 14px; }
+.nav-socials a { color: var(--mist); display: inline-flex; transition: color 0.2s; cursor: pointer; }
+.nav-socials a:hover { color: var(--accent); }
+.nav-socials svg { width: 16px; height: 16px; }
+.nav-links-socials { display: none; }
+
+.theme-toggle {
+  position: relative;
+  width: 46px; height: 26px;
+  border-radius: 20px;
+  border: 1px solid var(--border-strong);
+  background: var(--surface-soft);
+  cursor: pointer;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  padding: 2px;
+}
+.theme-toggle .knob {
+  width: 20px; height: 20px; border-radius: 50%;
+  background: var(--accent);
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 11px;
+  transition: transform 0.25s ease;
+  transform: translateX(0);
+}
+[data-theme="light"] .theme-toggle .knob { transform: translateX(20px); }
+
+.nav-cta {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 11px 24px;
+  border-radius: 999px;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 8px 20px var(--accent-soft-strong);
+}
+
+.nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; }
+.nav-toggle span { width: 22px; height: 1.5px; background: var(--text); transition: transform 0.25s, opacity 0.25s; }
+.nav-toggle.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* ── PAGE LOAD INTRO ── */
+.intro-veil {
+  position: fixed; inset: 0; z-index: 999;
+  background: var(--navy);
+  display: flex; align-items: center; justify-content: center;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+.intro-veil.hide { opacity: 0; visibility: hidden; }
+.intro-mark { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 1.8rem; color: #fff; opacity: 0; text-transform: uppercase; letter-spacing: -0.01em; animation: introSettle 1.1s ease forwards; }
+@keyframes introSettle {
+  0% { opacity: 0; transform: translateY(10px) scale(0.94); }
+  60% { opacity: 1; }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ── PAGES (SPA router) ── */
+.page { display: none; }
+.page.active { display: block; animation: pageFade 0.5s ease both; }
+@keyframes pageFade { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100svh;
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  align-items: center;
+  gap: 40px;
+  padding: 150px 48px 80px;
+  position: relative;
+  overflow: hidden;
+}
+.hero-field {
+  position: absolute; inset: 0; z-index: 0;
+  background: linear-gradient(180deg, var(--accent-soft) 0%, var(--bg) 55%);
+}
+.hero-mesh {
+  position: absolute; z-index: 0;
+  top: -20%; right: -15%; width: 70%; height: 90%;
+  opacity: 0.7;
+  background:
+    radial-gradient(ellipse 55% 50% at 65% 30%, var(--accent-soft-strong) 0%, transparent 65%),
+    radial-gradient(ellipse 40% 35% at 90% 70%, var(--gold-soft) 0%, transparent 60%);
+  animation: meshDrift 26s ease-in-out infinite alternate;
+}
+@keyframes meshDrift {
+  0% { transform: translate(0,0) rotate(0deg); }
+  100% { transform: translate(-3%, 3%) rotate(2deg); }
+}
+@keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+
+.hero-copy { position: relative; z-index: 1; }
+
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 12px; font-weight: 800; letter-spacing: 0.02em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 26px;
+  background: var(--accent-soft);
+  padding: 8px 16px;
+  border-radius: 999px;
+  animation: fadeUp 0.8s ease both;
+}
+.hero-eyebrow-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px var(--accent-soft-strong); }
+
+.hero h1 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.6rem, 5.6vw, 4.6rem);
+  line-height: 1.05; letter-spacing: -0.03em; max-width: 720px;
+  animation: fadeUp 0.8s 0.1s ease both;
+}
+.hero h1 em { font-style: normal; color: var(--accent); position: relative; }
+.hero h1 em::after { content: none; }
+.hero-sub {
+  margin-top: 26px; max-width: 460px;
+  font-size: 16px; font-weight: 400; color: var(--mist); line-height: 1.8;
+  animation: fadeUp 0.8s 0.2s ease both;
+  padding-left: 0;
+  border-left: none;
+}
+.hero-actions {
+  margin-top: 40px;
+  display: flex; gap: 12px; flex-wrap: wrap;
+  animation: fadeUp 0.8s 0.3s ease both;
+}
+
+.hero-aside {
+  position: relative; z-index: 1;
+  display: flex; flex-direction: column; gap: 0;
+  animation: fadeUp 0.9s 0.35s ease both;
+}
+.hero-aside-item {
+  padding: 20px 0;
+  border-top: 1px solid var(--border);
+}
+.hero-aside-item:first-child { border-top: none; padding-top: 0; }
+.hero-aside-num { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 1.5rem; color: var(--accent); display: block; margin-bottom: 6px; }
+.hero-aside-label { font-size: 12.5px; color: var(--mist); font-weight: 400; line-height: 1.5; }
+
+/* ── HERO GRAPHIC: generative diagnostic mark ── */
+.hero-graphic {
+  position: relative; z-index: 1;
+  width: 100%; aspect-ratio: 1 / 1.05;
+  display: flex; align-items: center; justify-content: center;
+  animation: fadeUp 1s 0.3s ease both;
+}
+.hero-graphic canvas { width: 100%; height: 100%; display: block; }
+.hero-graphic-caption {
+  position: absolute; left: 50%; bottom: -6px; transform: translateX(-50%);
+  font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--dim); white-space: nowrap;
+}
+@media (max-width: 900px) {
+  .hero-graphic { display: none; }
+}
+
+.btn-outline, .btn-solid {
+  font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 14px;
+  padding: 15px 30px; border-radius: 999px; cursor: pointer; text-decoration: none;
+  display: inline-block; border: 1.5px solid transparent;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.btn-outline { border-color: var(--border-strong); background: transparent; color: var(--text); }
+.btn-solid {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 10px 26px var(--accent-soft-strong);
+}
+@media (hover: hover) and (pointer: fine) {
+  .btn-outline:hover { background: var(--surface-soft); border-color: var(--accent); transform: translateY(-1px); }
+  .btn-solid:hover { transform: translateY(-1px); box-shadow: 0 14px 32px var(--accent-soft-strong); background: var(--accent-deep); }
+  .nav-cta:hover { background: var(--accent-deep); }
+}
+
+/* ── REVEAL ── */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal.pop { transform: translateY(24px) scale(0.97); }
+.reveal.pop.visible { transform: translateY(0) scale(1); }
+
+/* ── MISSION ── */
+.mission { padding: 140px 24px; border-top: 1px solid var(--border); position: relative; overflow: hidden; }
+.mission-inner { position: relative; z-index: 1; max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 1fr; gap: 64px; }
+.mission-quote { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: clamp(1.7rem, 3.2vw, 2.3rem); line-height: 1.28; letter-spacing: -0.02em; }
+.mission-quote em { font-style: normal; color: var(--accent); }
+.mission-body p { font-weight: 400; color: var(--mist); line-height: 1.9; margin-bottom: 18px; }
+.mission-body p:last-child { margin-bottom: 0; }
+
+/* ── FOUNDER NOTE ── */
+.founder { padding: 140px 24px; border-top: 1px solid var(--border); position: relative; }
+.founder-inner {
+  max-width: 1080px; margin: 0 auto;
+  display: grid; grid-template-columns: 240px 1fr; gap: 64px;
+}
+.founder-card {
+  border: 1px solid var(--border-strong); border-radius: var(--radius-md);
+  padding: 32px 26px; height: max-content;
+  background: var(--surface);
+  position: sticky; top: 100px;
+}
+.founder-card-role {
+  font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800;
+  font-size: 1.2rem; color: var(--accent); margin-bottom: 10px;
+}
+.founder-card-name { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--dim); margin-bottom: 22px; }
+.founder-card-meta { font-size: 12.5px; color: var(--mist); line-height: 1.8; padding-top: 18px; border-top: 1px solid var(--border); font-weight: 300; }
+
+.founder-quote {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+}
+.founder-quote em { font-style: normal; color: var(--accent); }
+.founder-body { margin-top: 26px; font-weight: 400; color: var(--mist); line-height: 1.95; font-size: 15px; }
+.founder-body p { margin-bottom: 18px; }
+@media (max-width: 800px) {
+  .founder-inner { grid-template-columns: 1fr; gap: 32px; }
+  .founder-card { position: static; display: flex; align-items: center; gap: 18px; padding: 22px; }
+  .founder-card-role { margin-bottom: 0; }
+  .founder-card-name { margin-bottom: 0; }
+  .founder-card-meta { display: none; }
+}
+
+/* ── TRACKS (fresher / mid-career) — bordered problem-card style ── */
+.tracks { padding: 140px 24px; border-top: 1px solid var(--border); }
+.tracks-grid { margin-top: 64px; display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 24px; }
+.track-card {
+  position: relative; padding: 44px 36px; overflow: hidden;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-strong);
+}
+.track-card.volume {
+  background: var(--surface);
+}
+.track-card.premium {
+  background: var(--navy);
+  color: #fff;
+  border-color: var(--navy);
+}
+.track-tag { display: inline-flex; align-items: center; gap: 7px; font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; padding: 7px 15px; border-radius: 999px; margin-bottom: 26px; }
+.track-card.volume .track-tag { color: var(--accent); background: var(--accent-soft); }
+.track-card.premium .track-tag { color: var(--navy); background: #fff; }
+.track-card.premium .track-tag::before { content: '★'; font-size: 9px; }
+.track-name { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; margin-bottom: 10px; letter-spacing: -0.02em; }
+.track-card.volume .track-name { font-size: 1.7rem; color: var(--text); }
+.track-card.premium .track-name { font-size: 1.9rem; color: #fff; }
+.track-for { font-size: 13px; color: var(--dim); margin-bottom: 22px; }
+.track-card.premium .track-for { color: rgba(255,255,255,0.55); }
+.track-desc { font-weight: 400; color: var(--mist); line-height: 1.85; font-size: 14.5px; margin-bottom: 28px; }
+.track-card.premium .track-desc { color: rgba(255,255,255,0.75); }
+.track-list { list-style: none; margin-bottom: 30px; }
+.track-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 13.5px; color: var(--mist); padding: 10px 0; border-top: 1px solid var(--border); }
+.track-card.premium .track-list li { color: rgba(255,255,255,0.8); border-top-color: rgba(255,255,255,0.14); }
+.track-list li:first-child { border-top: none; }
+.track-card.volume .track-list li::before { content: '→'; color: var(--accent); flex-shrink: 0; font-weight: 700; }
+.track-card.premium .track-list li::before { content: '→'; color: #fff; flex-shrink: 0; font-weight: 700; }
+.track-card.premium .btn-solid { background: #fff; color: var(--navy); box-shadow: none; }
+@media (hover: hover) and (pointer: fine) {
+  .track-card.premium .btn-solid:hover { background: rgba(255,255,255,0.88); }
+}
+@media (max-width: 900px) {
+  .tracks-grid { grid-template-columns: 1fr; }
+}
+
+/* ── METHODOLOGY / PROGRAMS — dark navy "what we do" block ── */
+.programs { padding: 140px 24px; border-top: 1px solid var(--border); }
+.programs-header { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 24px; margin-bottom: 48px; }
+.programs-grid {
+  display: flex; flex-direction: column;
+  background: var(--navy);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border-top: none;
+}
+.card {
+  position: relative;
+  display: grid; grid-template-columns: 60px 1fr auto;
+  align-items: center; gap: 28px;
+  padding: 34px 32px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  transition: background 0.3s;
+  color: #fff;
+}
+.card:last-child { border-bottom: none; }
+@media (hover: hover) and (pointer: fine) {
+  .card:hover { background: rgba(255,255,255,0.04); }
+}
+.card-index {
+  font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 1.4rem;
+  color: var(--card-accent, var(--accent-tint)); line-height: 1;
+}
+.card-tag { display: none; }
+.card-content { display: grid; grid-template-columns: 260px 1fr; gap: 32px; align-items: start; }
+.card-name { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 1.5rem; letter-spacing: -0.01em; color: #fff; }
+.card-tagline { font-weight: 400; color: rgba(255,255,255,0.68); line-height: 1.8; font-size: 14px; margin-bottom: 14px; }
+.card-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+.pill { font-size: 11.5px; font-weight: 600; padding: 6px 13px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.18); color: rgba(255,255,255,0.7); }
+
+.card-1 { --card-accent: #ffffff; }
+.card-2 { --card-accent: #ffffff; }
+.card-3 { --card-accent: #ffffff; }
+
+@media (max-width: 900px) {
+  .card { grid-template-columns: 40px 1fr; gap: 16px; padding: 28px 24px; }
+  .card-content { grid-template-columns: 1fr; gap: 14px; }
+}
+
+/* ── WHO FOR / NOT FOR ── */
+.fit { padding: 140px 24px; border-top: 1px solid var(--border); }
+.fit-grid { margin-top: 64px; display: grid; grid-template-columns: 1.35fr 1fr; gap: 24px; align-items: start; }
+.fit-col.yes {
+  border-radius: var(--radius-md); padding: 44px 40px; border: 1px solid var(--border-strong);
+  background: var(--surface);
+}
+.fit-col.no { border-radius: var(--radius-md); padding: 32px 30px; border: 1px dashed var(--border-strong); background: transparent; }
+.fit-col.yes h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 1.8rem; margin-bottom: 24px; letter-spacing: -0.02em; }
+.fit-col.no h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 1.2rem; margin-bottom: 16px; color: var(--dim); }
+.fit-col ul { list-style: none; }
+.fit-col.yes li { padding: 13px 0; border-top: 1px solid var(--border); font-size: 15px; color: var(--text); font-weight: 500; display: flex; gap: 12px; }
+.fit-col.no li { padding: 8px 0; font-size: 13px; color: var(--dim); font-weight: 400; display: flex; gap: 10px; }
+.fit-col.yes li:first-child { border-top: none; }
+.fit-col.yes li::before { content: '✓'; color: var(--accent); font-weight: 700; flex-shrink: 0; }
+.fit-col.no li::before { content: '—'; color: var(--dim); flex-shrink: 0; }
+@media (max-width: 900px) { .fit-grid { grid-template-columns: 1fr; } }
+
+/* ── PROCESS — numbered bordered cards like reference "01/02/03" ── */
+.process { padding: 140px 24px; border-top: 1px solid var(--border); }
+.process-grid { margin-top: 64px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; position: relative; }
+.process-grid::before { content: none; }
+.process-step {
+  position: relative; z-index: 1;
+  padding: 28px 24px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+}
+.step-num {
+  width: 40px; height: 40px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 1rem;
+  color: #fff; background: var(--accent);
+  margin-bottom: 20px;
+}
+.step-title { font-weight: 800; font-size: 15px; margin-bottom: 10px; }
+.step-body { font-weight: 400; color: var(--mist); font-size: 13.5px; line-height: 1.75; }
+
+/* ── FOUNDING COHORT TRANSPARENCY ── */
+.stats { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 64px 24px; background: var(--bg-soft); }
+.stats-inner { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1px 1fr 1px 1fr; gap: 40px; align-items: center; }
+.stats-divider { width: 1px; height: 60px; background: var(--border-strong); }
+.stat-item { }
+.stat-eyebrow { font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+.stat-num { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.05rem; color: var(--text); line-height: 1.5; font-weight: 600; }
+@media (max-width: 900px) {
+  .stats-inner { grid-template-columns: 1fr; gap: 28px; }
+  .stats-divider { width: 60px; height: 1px; }
+}
+
+/* ── VALUES ── */
+.values { padding: 140px 24px; border-top: 1px solid var(--border); }
+.values-grid { margin-top: 64px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px 32px; }
+.value-num { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 1.4rem; color: var(--accent); display: block; margin-bottom: 14px; }
+.value-title { font-weight: 800; font-size: 16px; margin-bottom: 10px; }
+.value-body { font-weight: 400; color: var(--mist); font-size: 14px; line-height: 1.8; }
+
+/* ── COMPARISON ── */
+.compare { padding: 140px 24px; border-top: 1px solid var(--border); }
+.compare-table { margin-top: 56px; width: 100%; border-collapse: collapse; background: var(--surface); border: 1px solid var(--border-strong); border-radius: var(--radius-md); overflow: hidden; }
+.compare-table th, .compare-table td { padding: 20px 24px; text-align: left; font-size: 14px; border-bottom: 1px solid var(--border); }
+.compare-table tr:last-child th, .compare-table tr:last-child td { border-bottom: none; }
+.compare-table thead th { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 800; background: var(--surface-soft); }
+.compare-table th:first-child { color: var(--mist); font-weight: 500; font-size: 13.5px; width: 40%; }
+.compare-table td { color: var(--mist); font-weight: 400; }
+.compare-table td.col-curwic { color: var(--text); font-weight: 700; }
+.compare-check { color: var(--accent); font-weight: 700; margin-right: 6px; }
+.compare-cross { color: var(--dim); font-weight: 700; margin-right: 6px; }
+.compare-highlight { background: var(--accent-soft); }
+
+/* ── FAQ ── */
+.faq { padding: 140px 24px; border-top: 1px solid var(--border); }
+.faq-list { margin-top: 56px; max-width: 780px; }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-question {
+  width: 100%; background: none; border: none; color: var(--text);
+  font-size: 16px; font-weight: 700; text-align: left; padding: 24px 0;
+  display: flex; align-items: center; justify-content: space-between; gap: 20px; cursor: pointer;
+}
+.faq-icon { flex-shrink: 0; width: 20px; height: 20px; position: relative; }
+.faq-icon::before, .faq-icon::after { content: ''; position: absolute; background: var(--accent); transition: transform 0.3s, opacity 0.3s; }
+.faq-icon::before { width: 100%; height: 2px; top: 50%; left: 0; transform: translateY(-50%); border-radius: 2px; }
+.faq-icon::after { width: 2px; height: 100%; left: 50%; top: 0; transform: translateX(-50%); border-radius: 2px; }
+.faq-item.open .faq-icon::after { transform: translateX(-50%) rotate(90deg); opacity: 0; }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.35s ease; }
+.faq-item.open .faq-answer { max-height: 280px; padding-bottom: 26px; }
+.faq-answer p { font-weight: 400; color: var(--mist); line-height: 1.85; font-size: 14.5px; max-width: 640px; }
+
+/* ── FINAL CTA — solid blue band like reference contact section ── */
+.footer-cta { padding: 120px 24px; text-align: center; border-top: 1px solid var(--border); position: relative; overflow: hidden; background: var(--accent); }
+.footer-cta::before { content: none; }
+.footer-cta-inner { position: relative; max-width: 620px; margin: 0 auto; padding-top: 0; }
+.footer-cta-inner .label { justify-content: center; display: flex; color: rgba(255,255,255,0.85); }
+.footer-cta-inner .label::before { color: rgba(255,255,255,0.85); }
+.footer-cta h2 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: clamp(2rem, 5vw, 3rem); line-height: 1.18; letter-spacing: -0.03em; color: #fff; }
+.footer-cta h2 em { font-style: normal; color: #fff; text-decoration: underline; text-decoration-color: rgba(255,255,255,0.4); }
+.footer-cta p { margin: 22px 0 36px; font-weight: 400; color: rgba(255,255,255,0.82); line-height: 1.85; }
+.footer-cta-note { margin-top: 18px; font-size: 12.5px; color: rgba(255,255,255,0.65); }
+.footer-cta .btn-solid { background: #fff; color: var(--accent); box-shadow: none; }
+@media (hover: hover) and (pointer: fine) { .footer-cta .btn-solid:hover { background: rgba(255,255,255,0.9); } }
+
+/* ── GENERIC PAGE HEADER (sub-pages) ── */
+.page-hero {
+  padding: 160px 24px 80px; text-align: center; position: relative; overflow: hidden;
+  border-bottom: 1px solid var(--border);
+}
+.page-hero .hero-mesh { opacity: 0.5; }
+.page-hero-inner { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
+.page-hero h1 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: clamp(2.2rem, 5.6vw, 3.6rem); line-height: 1.12; letter-spacing: -0.03em; }
+.page-hero h1 em { font-style: normal; color: var(--accent); }
+.page-hero p { margin-top: 22px; font-weight: 400; color: var(--mist); line-height: 1.85; max-width: 520px; margin-left: auto; margin-right: auto; }
+
+/* ── HOW WE DO IT PAGE ── */
+.method-flow { padding: 140px 24px; }
+.method-item { max-width: 900px; margin: 0 auto 48px; display: grid; grid-template-columns: 100px 1fr; gap: 40px; padding: 40px; border: 1px solid var(--border-strong); border-radius: var(--radius-md); background: var(--surface); }
+.method-item:last-child { margin-bottom: 0; }
+.method-num { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 2.6rem; color: var(--accent); line-height: 1; }
+.method-item h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 1.6rem; margin-bottom: 16px; letter-spacing: -0.02em; }
+.method-item p { font-weight: 400; color: var(--mist); line-height: 1.9; font-size: 15px; margin-bottom: 14px; }
+.method-item p:last-child { margin-bottom: 0; }
+.method-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+@media (max-width: 640px) { .method-item { grid-template-columns: 1fr; gap: 12px; padding: 28px; } }
+
+.philosophy-block { padding: 100px 24px; border-top: 1px solid var(--border); background: var(--bg-soft); }
+.philosophy-inner { max-width: 780px; margin: 0 auto; text-align: center; }
+.philosophy-inner .section-title { margin-bottom: 28px; }
+.philosophy-inner .section-body { max-width: 620px; margin-left: auto; margin-right: auto; }
+
+/* ── CAREERS PAGE ── */
+.careers-content { padding: 100px 24px 140px; }
+.careers-grid { max-width: 900px; margin: 64px auto 0; display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.career-card { background: var(--surface); border: 1px solid var(--border-strong); border-radius: var(--radius-md); padding: 30px 28px; }
+.career-card h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 1.25rem; margin-bottom: 12px; }
+.career-card p { font-weight: 400; color: var(--mist); line-height: 1.8; font-size: 13.5px; }
+.careers-cta-box {
+  max-width: 700px; margin: 90px auto 0; text-align: center;
+  background: var(--navy); color: #fff; border-radius: var(--radius-lg);
+  padding: 56px 40px;
+}
+.careers-cta-box h2 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 2rem; margin-bottom: 16px; letter-spacing: -0.02em; }
+.careers-cta-box p { font-weight: 400; color: rgba(255,255,255,0.7); line-height: 1.85; margin-bottom: 28px; max-width: 480px; margin-left: auto; margin-right: auto; }
+.careers-email {
+  display: inline-flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 700;
+  padding: 14px 28px; border-radius: 999px; border: none; background: #fff;
+  text-decoration: none; color: var(--navy); transition: background 0.2s;
+}
+.careers-email:hover { background: rgba(255,255,255,0.88); }
+
+/* ── TOOLS ── */
+.tools-grid { max-width: 900px; margin: 64px auto 0; display: grid; grid-template-columns: 1fr; gap: 18px; }
+.tool-card {
+  text-align: left;
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  padding: 30px 32px;
+  cursor: pointer;
+  color: inherit;
+  transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+}
+.tool-card:hover { border-color: var(--accent); background: var(--surface-soft); transform: translateY(-2px); }
+.tool-card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+.tool-card-tag { font-size: 10.5px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); background: var(--accent-soft); padding: 6px 12px; border-radius: 999px; }
+.tool-card-arrow { font-size: 18px; color: var(--dim); transition: transform 0.2s ease, color 0.2s ease; }
+.tool-card:hover .tool-card-arrow { color: var(--accent); transform: translateX(4px); }
+.tool-card h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 1.4rem; line-height: 1.25; margin-bottom: 12px; letter-spacing: -0.01em; }
+.tool-card-short { color: var(--accent); font-style: normal; font-weight: 600; }
+.tool-card p { font-weight: 400; color: var(--mist); line-height: 1.8; font-size: 14px; max-width: 620px; }
+.tool-card-meta { margin-top: 18px; display: flex; gap: 8px; font-size: 12.5px; color: var(--dim); font-weight: 500; }
+
+.tool-back { display: inline-block; font-size: 12.5px; font-weight: 700; color: var(--mist); text-decoration: none; margin-bottom: 22px; cursor: pointer; }
+.tool-back:hover { color: var(--accent); }
+
+/* ── CONTACT PAGE — dark navy split like reference contact section ── */
+.contact-content { padding: 0; }
+.contact-grid { max-width: 1180px; margin: 0 auto; padding: 100px 24px 140px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+.contact-info-item { padding: 26px 0; border-top: 1px solid var(--border); }
+.contact-info-item:first-child { border-top: none; padding-top: 0; }
+.contact-info-label { font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--dim); margin-bottom: 10px; }
+.contact-info-value { font-size: 17px; font-weight: 700; }
+.contact-info-value a { text-decoration: none; color: var(--accent); }
+.contact-info-value a:hover { text-decoration: underline; }
+.contact-info-sub { margin-top: 6px; font-size: 13px; color: var(--mist); font-weight: 400; }
+
+.contact-form-box { background: var(--surface); border: 1px solid var(--border-strong); border-radius: var(--radius-md); padding: 36px; }
+.contact-form-box h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 1.3rem; margin-bottom: 22px; }
+
+@media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; gap: 48px; } }
+
+/* ── FOOTER ── */
+footer { padding: 40px 48px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; border-top: 1px solid var(--border); }
+.footer-logo { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 15px; cursor: pointer; text-transform: uppercase; }
+.footer-links { list-style: none; display: flex; gap: 26px; flex-wrap: wrap; align-items: center; }
+.footer-links a { font-size: 13px; color: var(--mist); text-decoration: none; cursor: pointer; }
+.footer-links a:hover { color: var(--accent); }
+.footer-copy { font-size: 12px; color: var(--dim); }
+.footer-socials { display: flex; align-items: center; gap: 16px; order: 2; }
+.footer-socials a { color: var(--dim); display: inline-flex; transition: color 0.2s; cursor: pointer; }
+.footer-socials a:hover { color: var(--accent); }
+.footer-socials svg { width: 17px; height: 17px; }
+
+/* ── LEGAL PAGES ── */
+.legal-content { padding: 160px 24px 120px; max-width: 760px; margin: 0 auto; }
+.legal-content h1 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 2.1rem; margin-bottom: 8px; letter-spacing: -0.02em; }
+.legal-content .legal-updated { font-size: 13px; color: var(--dim); margin-bottom: 40px; }
+.legal-content h2 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 1.3rem; margin: 36px 0 12px; }
+.legal-content p, .legal-content li { font-weight: 400; color: var(--mist); line-height: 1.9; font-size: 14.5px; margin-bottom: 14px; }
+.legal-content ul { padding-left: 20px; }
+.legal-content a { color: var(--accent); }
+
+/* ── 404 ── */
+.notfound { min-height: 80vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 160px 24px 100px; }
+.notfound-num { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: clamp(4rem, 14vw, 9rem); color: var(--accent); line-height: 1; }
+.notfound p { margin: 20px 0 32px; color: var(--mist); font-weight: 400; }
+
+/* ── MODAL ── */
+.modal-overlay {
+  position: fixed; inset: 0; z-index: 500;
+  background: rgba(8,10,24,0.6);
+  backdrop-filter: blur(4px);
+  display: flex; align-items: center; justify-content: center;
+  padding: 24px;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+[data-theme="light"] .modal-overlay { background: rgba(13,17,48,0.4); }
+.modal-overlay.open { opacity: 1; pointer-events: all; }
+.modal {
+  width: 100%; max-width: 640px; max-height: 88vh;
+  background: var(--surface); border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg); box-shadow: var(--shadow);
+  display: flex; flex-direction: column;
+  transform: translateY(16px) scale(0.98);
+  transition: transform 0.3s ease;
+}
+.modal-overlay.open .modal { transform: translateY(0) scale(1); }
+.modal-head {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 24px 28px 0;
+}
+.modal-close {
+  background: var(--surface-soft); border: 1px solid var(--border-strong); color: var(--text);
+  width: 34px; height: 34px; border-radius: 50%; font-size: 16px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.modal-body { padding: 20px 28px 32px; overflow-y: auto; }
+.modal-eyebrow { font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); }
+
+.step-tracker { display: flex; gap: 10px; flex: 1; }
+.step-tracker-item { flex: 1; }
+.step-tracker-bar { height: 3px; border-radius: 3px; background: var(--border); overflow: hidden; margin-bottom: 10px; }
+.step-tracker-fill { height: 100%; width: 0%; background: var(--accent); transition: width 0.4s ease; }
+.step-tracker-item.done .step-tracker-fill, .step-tracker-item.active .step-tracker-fill { width: 100%; }
+.step-tracker-label { font-size: 11px; font-weight: 700; letter-spacing: 0.03em; color: var(--dim); }
+.step-tracker-item.active .step-tracker-label { color: var(--text); }
+
+.form-step { display: none; }
+.form-step.active { display: block; animation: fadeUp 0.4s ease both; }
+.form-step h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 1.4rem; margin-bottom: 6px; }
+.form-step > .step-intro { font-size: 13px; color: var(--dim); margin-bottom: 26px; }
+
+.field { margin-bottom: 22px; }
+.field label.field-label { display: block; font-size: 13.5px; font-weight: 700; margin-bottom: 10px; }
+.field label.field-label .req { color: var(--warn); margin-left: 3px; }
+
+.input-wrap { position: relative; }
+.input-wrap input[type="text"],
+.input-wrap input[type="email"],
+.input-wrap input[type="tel"],
+.input-wrap input[type="url"],
+.input-wrap textarea,
+.input-wrap select {
+  width: 100%;
+  background: var(--surface-soft);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  color: var(--text);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14.5px;
+  transition: border-color 0.2s;
+}
+.input-wrap input::placeholder, .input-wrap textarea::placeholder { color: var(--dim); }
+.input-wrap input:focus, .input-wrap textarea:focus, .input-wrap select:focus { outline: none; border-color: var(--accent); }
+.input-wrap textarea { resize: vertical; min-height: 80px; }
+.char-count { text-align: right; font-size: 11.5px; color: var(--dim); margin-top: 6px; }
+
+.phone-row { display: flex; gap: 10px; }
+.phone-prefix {
+  flex-shrink: 0; width: 56px; display: flex; align-items: center; justify-content: center;
+  background: var(--surface-soft); border: 1px solid var(--border-strong); border-radius: var(--radius-sm);
+  font-size: 14px; color: var(--mist);
+}
+.phone-row input { flex: 1; }
+
+.field-error { display: none; color: var(--warn); font-size: 12.5px; margin-top: 8px; }
+.field.invalid .field-error { display: block; }
+.field.invalid input, .field.invalid textarea { border-color: var(--warn); }
+
+.options-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+.options-grid.single { grid-template-columns: 1fr; }
+.option {
+  position: relative; display: flex; align-items: flex-start; gap: 12px;
+  border: 1px solid var(--border-strong); border-radius: var(--radius-sm); padding: 13px 15px;
+  cursor: pointer; transition: border-color 0.2s, background 0.2s;
+}
+.option input { position: absolute; opacity: 0; width: 0; height: 0; }
+.option-mark {
+  flex-shrink: 0; width: 18px; height: 18px; margin-top: 1px;
+  border: 1.5px solid var(--border-strong); background: transparent;
+  transition: border-color 0.2s, background 0.2s;
+}
+.option input[type="radio"] ~ .option-mark { border-radius: 50%; }
+.option input[type="checkbox"] ~ .option-mark { border-radius: 5px; }
+.option-text { font-size: 13.5px; font-weight: 400; color: var(--mist); line-height: 1.5; }
+.option:has(input:checked) { border-color: var(--accent); background: var(--accent-soft); }
+.option:has(input:checked) .option-mark { border-color: var(--accent); background: var(--accent); }
+.option:has(input:checked) .option-text { color: var(--text); }
+
+.consent-box {
+  display: flex; gap: 12px; align-items: flex-start;
+  border: 1px solid var(--border-strong); border-radius: var(--radius-sm); padding: 15px; margin-bottom: 14px;
+  background: var(--accent-soft);
+}
+.consent-box input { margin-top: 3px; flex-shrink: 0; width: 16px; height: 16px; accent-color: var(--accent); }
+.consent-box p { font-size: 12.5px; color: var(--mist); line-height: 1.7; }
+.consent-box a { color: var(--accent); text-decoration: underline; cursor: pointer; }
+
+.form-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; gap: 12px; }
+.btn-back {
+  background: none; border: 1px solid var(--border-strong); color: var(--mist);
+  padding: 12px 24px; border-radius: 999px; font-weight: 700; font-size: 13.5px; cursor: pointer;
+  visibility: hidden;
+}
+.btn-back.show { visibility: visible; }
+.btn-next, .btn-submit {
+  background: var(--accent);
+  border: none; color: #fff; padding: 12px 28px; border-radius: 999px;
+  font-weight: 700; font-size: 13.5px; cursor: pointer; margin-left: auto;
+  box-shadow: 0 8px 20px var(--accent-soft-strong);
+}
+.btn-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.form-message { display: none; text-align: center; padding: 28px 4px 4px; }
+.form-message.show { display: block; }
+.form-message.success .check-badge {
+  width: 56px; height: 56px; border-radius: 50%; margin: 0 auto 20px;
+  background: var(--accent-soft); color: var(--good);
+  display: flex; align-items: center; justify-content: center; font-size: 26px;
+}
+.form-message.success h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 1.6rem; color: var(--text); margin-bottom: 10px; }
+.form-message.error h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 1.3rem; color: var(--warn); margin-bottom: 10px; }
+.form-message p { color: var(--mist); font-weight: 400; font-size: 14px; margin-bottom: 22px; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .mission-inner { grid-template-columns: 1fr; gap: 40px; }
+  .programs-grid { grid-template-columns: 1fr 1fr; }
+  .process-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+  .process-grid::before { display: none; }
+  .values-grid { grid-template-columns: 1fr 1fr; }
+  .stats-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .compare-table { font-size: 13px; }
+  .compare-table th, .compare-table td { padding: 16px; }
+  .tracks-grid { grid-template-columns: 1fr; }
+  .fit-grid { grid-template-columns: 1fr; }
+  .careers-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 720px) {
+  nav { padding: 0 18px; }
+  .nav-links {
+    position: fixed; top: 72px; left: 0; right: 0; flex-direction: column; align-items: flex-start; gap: 0;
+    background: var(--bg); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border);
+    max-height: 0; overflow: hidden; transition: max-height 0.3s ease;
+  }
+  .nav-links.open { max-height: 480px; }
+  .nav-links li { width: 100%; }
+  .nav-links a { display: block; padding: 16px 20px; width: 100%; border-bottom: 1px solid var(--border); }
+  .nav-links-socials { display: flex; align-items: center; justify-content: center; gap: 40px; padding: 18px 20px; }
+  .nav-links-socials a { color: var(--mist); display: inline-flex; cursor: pointer; }
+  .nav-links-socials svg { width: 18px; height: 18px; }
+  .nav-right { gap: 10px; }
+  .nav-cta.desktop-only { display: none; }
+  .nav-socials { display: none; }
+  .nav-toggle { display: flex; }
+
+  .hero { grid-template-columns: 1fr; padding: 110px 20px 70px; gap: 56px; }
+  .hero-mesh { top: -10%; right: -20%; width: 100%; }
+  .hero-sub { max-width: 100%; }
+  .hero-aside { flex-direction: row; overflow-x: auto; gap: 20px; padding-bottom: 4px; }
+  .hero-aside-item { border-top: none; padding: 0; flex: 0 0 220px; }
+  .mission, .programs, .process, .values, .footer-cta, .compare, .faq, .founder, .tracks, .fit, .method-flow, .philosophy-block { padding: 90px 20px; }
+  .mission-inner { grid-template-columns: 1fr; }
+  .card { grid-template-columns: 1fr; }
+  .card-content { grid-template-columns: 1fr; }
+  .process-grid { grid-template-columns: 1fr; gap: 16px; }
+  .process-grid::before { display: none; }
+  .values-grid { grid-template-columns: 1fr; gap: 36px; }
+  .stats-inner { grid-template-columns: 1fr; gap: 28px; }
+  .stats-divider { width: 60px; height: 1px; margin: 0 auto; }
+  footer { flex-direction: column; align-items: flex-start; padding: 32px 20px; }
+
+  .compare-table { border-collapse: separate; border-spacing: 0; }
+  .compare-table thead { display: none; }
+  .compare-table, .compare-table tbody, .compare-table tr, .compare-table th, .compare-table td { display: block; width: 100%; }
+  .compare-table tr { padding: 20px 20px 16px; border-bottom: 1px solid var(--border); }
+  .compare-table tr:last-child { border-bottom: none; }
+  .compare-table tr > th:first-child { padding: 0 0 12px; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--dim); border-bottom: none; }
+  .compare-table td { padding: 10px 14px; border-bottom: none; border-radius: 8px; margin-bottom: 8px; font-size: 13.5px; white-space: normal; }
+  .compare-table td:nth-of-type(1) { background: var(--surface-soft); }
+  .compare-table td.col-curwic { background: var(--accent-soft); }
+
+  .faq-question { font-size: 14.5px; }
+  .options-grid { grid-template-columns: 1fr; }
+  .phone-row { flex-wrap: nowrap; }
+
+  .modal-overlay { padding: 0; }
+  .modal { max-width: 100%; max-height: 100vh; height: 100vh; border-radius: 0; }
+
+  .page-hero { padding: 130px 20px 60px; }
+  .method-flow { padding: 90px 20px; }
+  .method-item { margin-bottom: 32px; padding: 28px 20px; }
+  .careers-content, .contact-content, .legal-content { padding-top: 130px; }
+  .contact-grid { padding: 130px 20px 90px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="intro-veil" id="introVeil"><div class="intro-mark">Curwic</div></div>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav>
+  <a class="nav-logo js-nav" data-page="home">Curwic</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a class="js-nav" data-page="home">Home</a></li>
+    <li><a class="js-nav-anchor" data-page="home" data-anchor="tracks">Consulting &amp; Coaching</a></li>
+    <li><a class="js-nav" data-page="how">How We Do It</a></li>
+    <li><a class="js-nav" data-page="careers">Careers</a></li>
+    <li><a class="js-nav" data-page="tools">Tools</a></li>
+    <li><a class="js-nav" data-page="contact">Contact</a></li>
+    <li><a class="js-apply-trigger">Apply</a></li>
+    <li class="nav-links-socials">
+      <a href="https://x.com/curwic" target="_blank" rel="noopener" aria-label="Curwic on X">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-7l-5.5-7.2L4.5 22H1.4l8.1-9.3L1 2h7.2l5 6.6L18.9 2zm-1.2 18h1.7L7.4 3.9H5.6L17.7 20z"/></svg>
+      </a>
+      <a href="https://instagram.com/curwic" target="_blank" rel="noopener" aria-label="Curwic on Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a href="https://facebook.com/curwic" target="_blank" rel="noopener" aria-label="Curwic on Facebook">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.6h2.6l.4-3h-3v-1.9c0-.9.2-1.5 1.5-1.5h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.9v3h2.5V21h3.1z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/company/curwic" target="_blank" rel="noopener" aria-label="Curwic on LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.11 1 2.5 1s2.48 1.12 2.48 2.5zM.24 8.25h4.5V23h-4.5V8.25zM8.25 8.25h4.31v2.02h.06c.6-1.13 2.07-2.32 4.26-2.32 4.55 0 5.39 3 5.39 6.9V23h-4.5v-6.68c0-1.6-.03-3.65-2.22-3.65-2.23 0-2.57 1.74-2.57 3.54V23h-4.5V8.25z"/></svg>
+      </a>
+    </li>
+  </ul>
+  <div class="nav-right">
+    <div class="nav-socials">
+      <a href="https://x.com/curwic" target="_blank" rel="noopener" aria-label="Curwic on X">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-7l-5.5-7.2L4.5 22H1.4l8.1-9.3L1 2h7.2l5 6.6L18.9 2zm-1.2 18h1.7L7.4 3.9H5.6L17.7 20z"/></svg>
+      </a>
+      <a href="https://instagram.com/curwic" target="_blank" rel="noopener" aria-label="Curwic on Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a href="https://facebook.com/curwic" target="_blank" rel="noopener" aria-label="Curwic on Facebook">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.6h2.6l.4-3h-3v-1.9c0-.9.2-1.5 1.5-1.5h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.9v3h2.5V21h3.1z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/company/curwic" target="_blank" rel="noopener" aria-label="Curwic on LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.11 1 2.5 1s2.48 1.12 2.48 2.5zM.24 8.25h4.5V23h-4.5V8.25zM8.25 8.25h4.31v2.02h.06c.6-1.13 2.07-2.32 4.26-2.32 4.55 0 5.39 3 5.39 6.9V23h-4.5v-6.68c0-1.6-.03-3.65-2.22-3.65-2.23 0-2.57 1.74-2.57 3.54V23h-4.5V8.25z"/></svg>
+      </a>
+    </div>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark mode">
+      <span class="knob" id="themeKnob">☾</span>
+    </button>
+    <a class="nav-cta desktop-only js-apply-trigger">Apply now</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ============================= -->
+<!-- PAGE: HOME -->
+<!-- ============================= -->
+<main class="page active" id="page-home" data-page="home">
+
+  <section class="hero">
+    <div class="hero-field"></div>
+    <div class="hero-mesh"></div>
+
+    <div class="hero-copy">
+      <div class="hero-eyebrow"><span class="hero-eyebrow-dot"></span>Founding Cohort · Now Enrolling</div>
+      <h1>Two practices.<br><em>One diagnostic method.</em></h1>
+      <p class="hero-sub">
+        Curwic runs two distinct services: <strong>management consulting</strong> for businesses, and <strong>1:1 coaching</strong> for individuals building skills and accelerating their career. Same rigorous, diagnostic-first approach — built for whichever you need.
+      </p>
+      <div class="hero-actions">
+        <a class="btn-solid js-apply-trigger">Apply now</a>
+        <a class="btn-outline js-nav" data-page="how">See how it works</a>
+      </div>
+    </div>
+
+    <div class="hero-graphic" aria-hidden="true">
+      <canvas id="diagnosticMark"></canvas>
+      <div class="hero-graphic-caption">Live diagnostic map</div>
+    </div>
+
+  </section>
+
+  <!-- WHAT WE DO — immediate B2B/B2C split -->
+  <section class="fit" id="what-we-do" style="padding-top:0; padding-bottom:60px; border-top:none;">
+    <div class="container">
+      <div class="reveal">
+        <div class="label">What Curwic is</div>
+        <h2 class="section-title">Two practices, <em>not one blurred service.</em></h2>
+        <p class="section-body">We don't run a single generic "performance" offer. We run two separate practices, each with its own team, process, and outcome.</p>
+      </div>
+      <div class="tracks-grid reveal" style="margin-top:48px;">
+        <div class="track-card volume">
+          <span class="track-tag">B2B · Management Consulting</span>
+          <h3 class="track-name">For businesses &amp; organisations</h3>
+          <div class="track-for">Founders, leadership teams, and operators</div>
+          <p class="track-desc">We diagnose what's actually capping your organisation's output, then design and embed the workflows, decision structures, and systems to close that gap.</p>
+          <a class="btn-outline js-nav-anchor" data-page="home" data-anchor="tracks">See the Consulting practice ↓</a>
+        </div>
+        <div class="track-card premium">
+          <span class="track-tag">B2C · Personal Coaching</span>
+          <h3 class="track-name">For individuals</h3>
+          <div class="track-for">Professionals at any career stage</div>
+          <p class="track-desc">1:1 coaching to help you solve real problems, build the specific skills you're missing, and accelerate your personal and professional growth.</p>
+          <a class="btn-solid js-nav-anchor" data-page="home" data-anchor="tracks">See the Coaching practice ↓</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION -->
+  <section class="mission" id="about">
+    <div class="mission-inner">
+      <div class="reveal">
+        <div class="label">Why Curwic exists</div>
+        <blockquote class="mission-quote">
+          Ability is rarely the gap.<br>
+          <em>Systems and execution are.</em>
+        </blockquote>
+      </div>
+      <div class="mission-body reveal">
+        <p>
+          Businesses underperform because their workflows and decision structures haven't kept up with their ambitions. Individuals underperform because they're missing a specific skill or system, not effort. Curwic addresses both, but as two separate practices: management consulting for organisations, and 1:1 coaching for individuals — each diagnostic-led, neither a repackaged version of the other.
+        </p>
+        <p style="margin-top:16px;">
+          <em>— Founder's note:</em> I built Curwic because I kept seeing the same pattern on both sides — capable teams and capable people, held back by a lack of system rather than a lack of ability. We're a founding cohort, which means direct access to the team building this, and both practices are still shaped by real client feedback.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE TWO PRACTICES: Consulting (B2B) + Coaching (B2C) -->
+  <section class="tracks" id="tracks">
+    <div class="container">
+      <div class="reveal">
+        <div class="label">Our two practices</div>
+        <h2 class="section-title">Consulting for businesses.<br><em>Coaching for individuals.</em></h2>
+        <p class="section-body">Pick the practice that matches who you are — a business that needs better systems, or an individual who wants to grow faster.</p>
+      </div>
+
+      <div class="tracks-grid reveal">
+        <div class="track-card volume">
+          <span class="track-tag">Management Consulting</span>
+          <h3 class="track-name">For Businesses</h3>
+          <div class="track-for">Founders, leadership teams &amp; organisations</div>
+          <p class="track-desc">An embedded consulting partnership that diagnoses what's limiting your organisation's output, then designs and installs the workflows and decision systems to fix it.</p>
+          <ul class="track-list">
+            <li>Organisational performance diagnostic</li>
+            <li>Workflow &amp; decision-structure redesign</li>
+            <li>Embedded consulting partner, not a report</li>
+            <li>Ongoing, data-grounded feedback loops</li>
+          </ul>
+          <a class="btn-outline js-apply-trigger" data-track="Consulting (Business)">Apply for Consulting</a>
+        </div>
+
+        <div class="track-card premium">
+          <span class="track-tag">Personal Coaching</span>
+          <h3 class="track-name">For Individuals</h3>
+          <div class="track-for">Professionals at any career stage</div>
+          <p class="track-desc">1:1 coaching to diagnose what's actually limiting your growth, then build the specific skills and habits to solve it — for your career, not a generic curriculum.</p>
+          <ul class="track-list">
+            <li>Personal performance diagnostic</li>
+            <li>Targeted skill-building, not generic modules</li>
+            <li>Decision-making &amp; execution under real pressure</li>
+            <li>Ongoing 1:1 coaching check-ins</li>
+          </ul>
+          <a class="btn-solid js-apply-trigger" data-track="Coaching (Individual)">Apply for Coaching</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- METHODOLOGY / PROGRAMS -->
+  <section class="programs" id="programs">
+    <div class="container">
+      <div class="programs-header">
+        <div class="reveal">
+          <div class="label">The shared method</div>
+          <h2 class="section-title">Three pillars.<br><em>Both practices.</em></h2>
+        </div>
+        <p class="section-body reveal" style="margin-top:0;">
+          Whether you're a business in Consulting or an individual in Coaching, every engagement runs on the same three-part method.
+        </p>
+      </div>
+
+      <div class="programs-grid">
+        <div class="card card-1 reveal">
+          <span class="card-index">01</span>
+          <span class="card-tag">Diagnose</span>
+          <div class="card-content">
+            <h3 class="card-name">Clarity</h3>
+            <div>
+              <p class="card-tagline">Structured analysis that cuts through noise to find what's actually limiting performance.</p>
+              <div class="card-pills">
+                <span class="pill">Decision-making</span>
+                <span class="pill">Root-cause analysis</span>
+                <span class="pill">Judgment</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card card-2 reveal">
+          <span class="card-index">02</span>
+          <span class="card-tag">Design</span>
+          <div class="card-content">
+            <h3 class="card-name">System</h3>
+            <div>
+              <p class="card-tagline">The plan and workflow for daily operations, so results stop depending on willpower.</p>
+              <div class="card-pills">
+                <span class="pill">Personalised planning</span>
+                <span class="pill">Workflow design</span>
+                <span class="pill">Process optimisation</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card card-3 reveal">
+          <span class="card-index">03</span>
+          <span class="card-tag">Deliver</span>
+          <div class="card-content">
+            <h3 class="card-name">Execution</h3>
+            <div>
+              <p class="card-tagline">Turning the plan into consistent output — closing the loop between decision and delivery.</p>
+              <div class="card-pills">
+                <span class="pill">Accountability</span>
+                <span class="pill">Continuous improvement</span>
+                <span class="pill">Measurable results</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS + FIT -->
+  <section class="process" id="approach">
+    <div class="container">
+      <div class="reveal">
+        <div class="label">How it works</div>
+        <h2 class="section-title">One process,<br><em>either practice.</em></h2>
+        <p class="section-body">Best fit for Consulting: your organisation's systems are capping output and leadership is ready to change how it operates. Best fit for Coaching: you know something specific is holding your growth back and want a plan, not a passive course.</p>
+      </div>
+
+      <div class="process-grid">
+        <div class="process-step reveal">
+          <span class="step-num">1</span>
+          <div class="step-title">Apply</div>
+          <p class="step-body">Tell us if you're applying for Consulting or Coaching, plus your context and goals. Takes about six minutes.</p>
+        </div>
+        <div class="process-step reveal">
+          <span class="step-num">2</span>
+          <div class="step-title">Profile review</div>
+          <p class="step-body">We review your application to confirm the right practice genuinely fits your situation.</p>
+        </div>
+        <div class="process-step reveal">
+          <span class="step-num">3</span>
+          <div class="step-title">1:1 evaluation call</div>
+          <p class="step-body">A conversation with a consultant or coach on your systems, goals, and priorities.</p>
+        </div>
+        <div class="process-step reveal">
+          <span class="step-num">4</span>
+          <div class="step-title">Begin the engagement</div>
+          <p class="step-body">Start your consulting partnership or coaching program, with ongoing sessions and feedback.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON -->
+  <section class="compare" id="compare">
+    <div class="container">
+      <div class="reveal">
+        <div class="label">Why Curwic</div>
+        <h2 class="section-title">Curwic vs.<br><em>generic productivity programs.</em></h2>
+      </div>
+
+      <table class="compare-table reveal">
+        <thead>
+          <tr><th></th><th>Generic programs</th><th>Curwic</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Format</th>
+            <td>Fixed group curriculum</td>
+            <td class="col-curwic"><span class="compare-check">✓</span>Personalised to you — 1:1 or diagnostic-led system</td>
+          </tr>
+          <tr>
+            <th>Starting point</th>
+            <td>Same framework for everyone</td>
+            <td class="col-curwic"><span class="compare-check">✓</span>A real diagnostic of what's actually limiting you</td>
+          </tr>
+          <tr>
+            <th>Who it's for</th>
+            <td>Usually one type of client</td>
+            <td class="col-curwic"><span class="compare-check">✓</span>Two named practices — Consulting for businesses, Coaching for individuals</td>
+          </tr>
+          <tr>
+            <th>Feedback style</th>
+            <td>Generic, softened</td>
+            <td class="col-curwic"><span class="compare-check">✓</span>Direct, specific, grounded in your real operations</td>
+          </tr>
+          <tr class="compare-highlight">
+            <th>Outcome focus</th>
+            <td>Completion certificate</td>
+            <td class="col-curwic"><span class="compare-check">✓</span>How you actually perform — a year from now, not a week</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="reveal">
+        <div class="label">Questions</div>
+        <h2 class="section-title">Before you<br><em>apply.</em></h2>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item reveal">
+          <button class="faq-question">
+            What's the difference between Consulting and Coaching?
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer"><p>Consulting is management consulting for businesses — we embed with your team to redesign workflows and decision structures. Coaching is 1:1 personal coaching for individuals — we help you diagnose what's limiting your growth and build the specific skills to fix it. They share a diagnostic method, but are run as two separate practices with different teams and deliverables.</p></div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-question">
+            Do you accept everyone who applies?
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer"><p>No. We only take on people and businesses we genuinely believe we can help — fit matters in both directions.</p></div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-question">
+            Curwic is new — why should I trust it?
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer"><p>We're upfront: this is a founding cohort. In exchange, you get direct access to the founder and partners shaping the system around real feedback — not a rigid process built before you arrived.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="footer-cta" id="apply">
+    <div class="footer-cta-inner">
+      <div class="label">Founding cohort</div>
+      <h2>Ready for <em>Consulting or Coaching</em>?</h2>
+      <p>Applications for the founding cohort are open now, for both practices.</p>
+      <a class="btn-solid js-apply-trigger">Start your application</a>
+      <div class="footer-cta-note">Takes about six minutes · No commitment until your evaluation call</div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================= -->
+<!-- PAGE: HOW WE DO IT -->
+<!-- ============================= -->
+<main class="page" id="page-how" data-page="how">
+
+  <section class="page-hero">
+    <div class="hero-mesh"></div>
+    <div class="page-hero-inner">
+      <div class="hero-eyebrow" style="justify-content:center;">Methodology</div>
+      <h1>The diagnostic <em>before</em> the system.</h1>
+      <p>Whether you're a business applying for Consulting or an individual applying for Coaching, we don't start with a template. We start by finding out what's actually limiting your performance — then build the system around that.</p>
+    </div>
+  </section>
+
+  <section class="method-flow">
+    <div class="method-item reveal">
+      <div class="method-num">01</div>
+      <div>
+        <h3>We diagnose before we prescribe</h3>
+        <p>Every engagement starts with an evaluation call, not a fixed program. In Consulting, we're listening for where a business's decisions stall, workflows break down, or execution gets muddy under pressure. In Coaching, we're listening for the specific skill, habit, or system gap that's capping an individual's growth.</p>
+        <p>Same diagnostic principle, applied to two different subjects — an organisation's operations, or a person's career.</p>
+        <div class="method-tags">
+          <span class="pill">1:1 evaluation call</span>
+          <span class="pill">Operational patterns</span>
+          <span class="pill">No fixed template</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="method-item reveal">
+      <div class="method-num">02</div>
+      <div>
+        <h3>We build a system specific to the practice, not a shared template</h3>
+        <p>Once we know what's actually holding back performance, we build a system specific to it. Two clients who both say "we want better execution" might get entirely different systems — one because a business's handoffs between teams break down, another because an individual's priorities aren't structured.</p>
+        <p>In Consulting, this means an embedded partnership with your organisation from day one. In Coaching, it means a personalised 1:1 program built around your specific goals.</p>
+        <div class="method-tags">
+          <span class="pill">Consulting: embedded partnership</span>
+          <span class="pill">Coaching: personalised 1:1 program</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="method-item reveal">
+      <div class="method-num">03</div>
+      <div>
+        <h3>We work against your real operations, not case studies</h3>
+        <p>Sessions are grounded in what's actually in front of you — the decision you're about to make, the workflow that's slowing your team down, the plan you need for next quarter. We'd rather work on the real thing than a hypothetical.</p>
+        <div class="method-tags">
+          <span class="pill">Applied implementation</span>
+          <span class="pill">Real operations</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="method-item reveal">
+      <div class="method-num">04</div>
+      <div>
+        <h3>We give direct feedback, on a cadence</h3>
+        <p>Better performance needs honest feedback delivered consistently, not once a quarter. Every session ends with something concrete to implement before the next one, and we track whether it's actually moving results — not just whether it felt productive in the room.</p>
+        <div class="method-tags">
+          <span class="pill">Direct feedback</span>
+          <span class="pill">Ongoing sessions</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="philosophy-block">
+    <div class="philosophy-inner reveal">
+      <div class="label">Our underlying belief</div>
+      <h2 class="section-title">It's rarely a <em>skills</em> problem.<br>It's almost always a <em>systems</em> problem.</h2>
+      <p class="section-body">Most businesses and individuals who come to us already have the underlying ability. What they're missing is a structure that turns that ability into consistent execution — whether that's a business's workflow or an individual's skill set. We build a system that treats the specific bottleneck, instead of a generic program that treats everyone the same.</p>
+      <a class="btn-solid js-apply-trigger" style="margin-top:12px;">Start your application</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================= -->
+<!-- PAGE: CAREERS -->
+<!-- ============================= -->
+<main class="page" id="page-careers" data-page="careers">
+
+  <section class="page-hero">
+    <div class="hero-mesh"></div>
+    <div class="page-hero-inner">
+      <div class="hero-eyebrow" style="justify-content:center;">Careers at Curwic</div>
+      <h1>Help us build the <em>diagnostic</em>, not just the delivery.</h1>
+      <p>We're a founding team building something we think is genuinely missing in professional and business performance. If that excites you more than it scares you, we'd like to hear from you.</p>
+    </div>
+  </section>
+
+  <section class="careers-content">
+    <div class="container">
+      <div class="reveal" style="text-align:center; max-width:640px; margin:0 auto;">
+        <div class="label" style="justify-content:center; display:flex;">Who we're looking for</div>
+        <h2 class="section-title">Dynamic interns, <em>right now.</em></h2>
+        <p class="section-body" style="margin-left:auto; margin-right:auto;">We're early — which means the people who join now shape a lot more than the people who join later. We're currently looking for dynamic interns across a few areas.</p>
+      </div>
+
+      <div class="careers-grid">
+        <div class="career-card reveal">
+          <h3>Performance & Content</h3>
+          <p>Help shape the frameworks, tools, and diagnostic systems our performance partners use with clients. Good fit if you're curious about operations, decision science, or organisational efficiency.</p>
+        </div>
+        <div class="career-card reveal">
+          <h3>Growth & Partnerships</h3>
+          <p>Help us reach both individuals looking to perform better and businesses looking to run more efficiently. Good fit if you're scrappy, comfortable with outreach, and like owning a number.</p>
+        </div>
+        <div class="career-card reveal">
+          <h3>Design & Brand</h3>
+          <p>Help Curwic look and feel like the company we're trying to become. Good fit if you care about detail, have taste, and want your work to actually ship.</p>
+        </div>
+        <div class="career-card reveal">
+          <h3>Operations</h3>
+          <p>Help keep a fast-moving early-stage team organised — applications, scheduling, partner onboarding, and the dozen small systems that make everything else work.</p>
+        </div>
+      </div>
+
+      <div class="careers-cta-box reveal">
+        <h2>Think you're a fit?</h2>
+        <p>We don't have a formal pipeline yet — which is exactly the point. Send us a note about who you are and what you'd want to work on, and we'll get back to you.</p>
+        <a class="careers-email" href="mailto:hr@curwic.space">hr@curwic.space</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================= -->
+<!-- PAGE: TOOLS -->
+<!-- ============================= -->
+<main class="page" id="page-tools" data-page="tools">
+
+  <section class="page-hero">
+    <div class="hero-mesh"></div>
+    <div class="page-hero-inner">
+      <div class="hero-eyebrow" style="justify-content:center;">Tools for business</div>
+      <h1>Software that does the <em>unglamorous</em> work properly.</h1>
+      <p>Alongside our performance systems, we build focused tools that solve one operational inefficiency well. Tap a tool below to see what it does.</p>
+    </div>
+  </section>
+
+  <section class="careers-content">
+    <div class="container">
+      <div class="tools-grid">
+        <button class="tool-card reveal js-tool-open" type="button" data-tool="puffppo">
+          <div class="tool-card-top">
+            <div class="tool-card-tag">Manufacturing · Planning</div>
+            <span class="tool-card-arrow">→</span>
+          </div>
+          <h3>Puff Panel Planning Optimiser <span class="tool-card-short">(PuffPPO)</span></h3>
+          <p>Cuts panel wastage and re-sequences your production run automatically, so cutting lists take minutes instead of a full afternoon.</p>
+          <div class="tool-card-meta">
+            <span>Setup in under a week</span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================= -->
+<!-- PAGE: TOOL DETAIL — PuffPPO -->
+<!-- ============================= -->
+<main class="page" id="page-tool-puffppo" data-page="tool-puffppo">
+
+  <section class="page-hero tool-detail-hero">
+    <div class="hero-mesh"></div>
+    <div class="page-hero-inner">
+      <a class="js-nav tool-back" data-page="tools">← Back to Tools</a>
+      <div class="hero-eyebrow" style="justify-content:center;">Manufacturing · Planning software</div>
+      <h1>Puff Panel Planning <em>Optimiser</em></h1>
+      <p>PuffPPO turns your panel orders into an optimised cutting and production plan — automatically, in seconds, with less material wasted on every run.</p>
+      <div class="hero-actions" style="justify-content:center; margin-top:32px;">
+        <a class="btn-solid" href="https://forms.gle/H2xuvCgs4sExyiZp8" target="_blank" rel="noopener">Request a demo</a>
+        <a class="btn-outline js-nav" data-page="tools">See other tools</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="careers-content">
+    <div class="container">
+
+      <div class="reveal" style="text-align:center; max-width:640px; margin:0 auto;">
+        <div class="label" style="justify-content:center; display:flex;">The problem</div>
+        <h2 class="section-title">Panel cutting plans, made <em>by hand.</em></h2>
+        <p class="section-body" style="margin-left:auto; margin-right:auto;">Most puff/sandwich panel manufacturers still plan cutting layouts and production sequencing manually — on spreadsheets or on paper. It's slow, it's error-prone, and it quietly wastes raw material on every single run.</p>
+      </div>
+
+      <div class="careers-grid" style="margin-top:56px;">
+        <div class="career-card reveal">
+          <h3>Panel-wastage optimisation</h3>
+          <p>Feeds your order sizes into a nesting engine that finds the cutting layout with the least offcut, run after run.</p>
+        </div>
+        <div class="career-card reveal">
+          <h3>Automatic run sequencing</h3>
+          <p>Orders are grouped and sequenced to minimise machine changeovers and idle time on the line.</p>
+        </div>
+        <div class="career-card reveal">
+          <h3>Live capacity view</h3>
+          <p>See what's committed, what's free, and what today's plan actually looks like — without opening five spreadsheets.</p>
+        </div>
+        <div class="career-card reveal">
+          <h3>Exportable cutting lists</h3>
+          <p>One-click export to a printable or machine-ready cutting list, so the floor gets exactly what planning intended.</p>
+        </div>
+      </div>
+
+      <div class="reveal" style="text-align:center; max-width:640px; margin:80px auto 0;">
+        <div class="label" style="justify-content:center; display:flex;">Details</div>
+        <h2 class="section-title">Everything you'd <em>ask us</em> anyway.</h2>
+      </div>
+
+      <div style="max-width:720px; margin:40px auto 0;">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Who is PuffPPO built for?</span>
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <p>Manufacturers and fabricators of puff/sandwich panels who currently plan cutting layouts and production runs manually and want to cut material waste and planning time.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How much material waste can we expect to save?</span>
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <p>Savings depend on your current process and order mix, but most teams moving off manual planning see a meaningful drop in offcut within the first few production runs.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Does it integrate with our existing systems?</span>
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <p>PuffPPO accepts order data via CSV or a simple API, and exports cutting lists in common formats your floor already uses. No ERP replacement required.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How long does setup take?</span>
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <p>Most teams are running their first optimised plan within a week, including a short onboarding call to map your panel sizes and machine constraints.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>What does it cost?</span>
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <p>Pricing depends on your production volume and number of lines. Get in touch and we'll size a plan to your operation.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="careers-cta-box reveal" style="margin-top:80px;">
+        <h2>Want to see it on your own order data?</h2>
+        <p>Send us a sample of a recent order and we'll show you the optimised cutting plan PuffPPO would have generated for it.</p>
+        <a class="careers-email" href="https://forms.gle/H2xuvCgs4sExyiZp8" target="_blank" rel="noopener">Request a demo</a>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================= -->
+<!-- PAGE: CONTACT -->
+<!-- ============================= -->
+<main class="page" id="page-contact" data-page="contact">
+
+  <section class="page-hero">
+    <div class="hero-mesh"></div>
+    <div class="page-hero-inner">
+      <div class="hero-eyebrow" style="justify-content:center;">Get in touch</div>
+      <h1>Let's talk about <em>where you're headed.</em></h1>
+      <p>Whether you're ready to apply — as an individual or a business — or just want to ask a question first, we read every message ourselves.</p>
+    </div>
+  </section>
+
+  <section class="contact-content">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="reveal">
+          <div class="contact-info-item">
+            <div class="contact-info-label">General enquiries</div>
+            <div class="contact-info-value"><a href="mailto:hello@curwic.space">hello@curwic.space</a></div>
+            <div class="contact-info-sub">Engagements, applications, partnerships — anything at all.</div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-label">Careers</div>
+            <div class="contact-info-value"><a href="mailto:hr@curwic.space">hr@curwic.space</a></div>
+            <div class="contact-info-sub">Internship and hiring enquiries.</div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-label">Ready to start?</div>
+            <div class="contact-info-value"><a class="js-apply-trigger">Apply for Consulting or Coaching →</a></div>
+            <div class="contact-info-sub">Takes about six minutes.</div>
+          </div>
+        </div>
+
+        <div class="contact-form-box reveal">
+          <h3>Send a message</h3>
+          <form id="contactForm" action="https://splitforms.com/api/submit" method="POST">
+            <input type="hidden" name="access_key" value="96923e1d39c94023936ec19e47cbf2c1">
+            <div class="field">
+              <label class="field-label" for="cName">Name<span class="req">*</span></label>
+              <div class="input-wrap"><input type="text" id="cName" name="name" placeholder="Your full name" required></div>
+            </div>
+            <div class="field">
+              <label class="field-label" for="cEmail">Email<span class="req">*</span></label>
+              <div class="input-wrap"><input type="email" id="cEmail" name="email" placeholder="you@email.com" required></div>
+            </div>
+            <div class="field">
+              <label class="field-label" for="cMessage">Message<span class="req">*</span></label>
+              <div class="input-wrap"><textarea id="cMessage" name="message" placeholder="What's on your mind?" required></textarea></div>
+            </div>
+            <button type="submit" class="btn-submit" style="width:100%; margin-left:0;">Send message</button>
+            <div class="form-message success" id="contactSuccess" style="padding-top:20px;">
+              <div class="check-badge">✓</div>
+              <h3 style="font-size:1.4rem;">Message sent</h3>
+              <p>We'll get back to you at the email you shared.</p>
+            </div>
+            <div class="form-message error" id="contactError" style="padding-top:20px;">
+              <h3>Something went wrong</h3>
+              <p>Please try again, or email us directly at hello@curwic.space.</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================= -->
+<!-- PAGE: PRIVACY -->
+<!-- ============================= -->
+<main class="page" id="page-privacy" data-page="privacy">
+  <div class="legal-content">
+    <h1>Privacy Policy</h1>
+    <div class="legal-updated">Last updated: July 2026</div>
+
+    <p>Curwic ("we", "us") respects your privacy. This policy explains what information we collect, why, and how we use it.</p>
+
+    <h2>What we collect</h2>
+    <p>When you apply to a Curwic engagement or contact us, we collect the information you provide directly — including your name, email, phone number, and answers to application questions about your goals and current challenges, whether individual or business.</p>
+
+    <h2>How we use it</h2>
+    <ul>
+      <li>To review and respond to your application</li>
+      <li>To contact you about your application, engagement, or enquiry</li>
+      <li>To improve our systems, tools, and how we communicate them</li>
+    </ul>
+
+    <h2>What we don't do</h2>
+    <p>We don't sell your personal information to third parties. We don't share it beyond what's needed to operate Curwic (for example, secure form-processing infrastructure).</p>
+
+    <h2>Your choices</h2>
+    <p>You can ask us to update or delete your information at any time by emailing <a href="mailto:hello@curwic.space">hello@curwic.space</a>. You can also unsubscribe from any newsletter communication at any time.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about this policy can be sent to <a href="mailto:hello@curwic.space">hello@curwic.space</a>.</p>
+  </div>
+</main>
+
+<!-- ============================= -->
+<!-- PAGE: TERMS -->
+<!-- ============================= -->
+<main class="page" id="page-terms" data-page="terms">
+  <div class="legal-content">
+    <h1>Terms & Conditions</h1>
+    <div class="legal-updated">Last updated: July 2026</div>
+
+    <p>By applying to or using Curwic's services, you agree to the following terms.</p>
+
+    <h2>Applications</h2>
+    <p>Submitting an application does not guarantee acceptance into a Curwic engagement. We review every application and select clients based on fit, as described on our site.</p>
+
+    <h2>Performance services</h2>
+    <p>Curwic provides efficiency and effectiveness services for individuals and businesses, including performance systems, operational optimisation, and intelligent tools. These services are not a substitute for medical, psychological, legal, or financial advice. Outcomes depend on individual or organisational effort and circumstances, and we don't guarantee specific results.</p>
+
+    <h2>Communications</h2>
+    <p>By submitting an application or contact form, you consent to being contacted by Curwic via email, phone, or messaging regarding your application or enquiry.</p>
+
+    <h2>Changes</h2>
+    <p>We may update these terms as Curwic's services evolve. Continued use of our site or services after changes constitutes acceptance of the updated terms.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about these terms can be sent to <a href="mailto:hello@curwic.space">hello@curwic.space</a>.</p>
+  </div>
+</main>
+
+<!-- ============================= -->
+<!-- PAGE: 404 -->
+<!-- ============================= -->
+<main class="page" id="page-404" data-page="404">
+  <div class="notfound">
+    <div class="notfound-num">404</div>
+    <h2 class="section-title">This page hasn't <em>found its footing.</em></h2>
+    <p>Let's get you back to where you're headed.</p>
+    <a class="btn-solid js-nav" data-page="home">Back to home</a>
+  </div>
+</main>
+
+<!-- ============================= -->
+<!-- FOOTER (shared across pages) -->
+<!-- ============================= -->
+<footer>
+  <a class="footer-logo js-nav" data-page="home">Curwic</a>
+  <ul class="footer-links">
+    <li><a class="js-nav" data-page="how">How We Do It</a></li>
+    <li><a class="js-nav" data-page="careers">Careers</a></li>
+    <li><a class="js-nav" data-page="tools">Tools</a></li>
+    <li><a class="js-nav" data-page="contact">Contact</a></li>
+    <li><a class="js-nav" data-page="privacy">Privacy Policy</a></li>
+    <li><a class="js-nav" data-page="terms">Terms & Conditions</a></li>
+  </ul>
+  <div class="footer-socials">
+    <a href="https://x.com/curwic" target="_blank" rel="noopener" aria-label="Curwic on X">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-7l-5.5-7.2L4.5 22H1.4l8.1-9.3L1 2h7.2l5 6.6L18.9 2zm-1.2 18h1.7L7.4 3.9H5.6L17.7 20z"/></svg>
+    </a>
+    <a href="https://instagram.com/curwic" target="_blank" rel="noopener" aria-label="Curwic on Instagram">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg>
+    </a>
+    <a href="https://facebook.com/curwic" target="_blank" rel="noopener" aria-label="Curwic on Facebook">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.6h2.6l.4-3h-3v-1.9c0-.9.2-1.5 1.5-1.5h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.9v3h2.5V21h3.1z"/></svg>
+    </a>
+    <a href="https://www.linkedin.com/company/curwic" target="_blank" rel="noopener" aria-label="Curwic on LinkedIn">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.11 1 2.5 1s2.48 1.12 2.48 2.5zM.24 8.25h4.5V23h-4.5V8.25zM8.25 8.25h4.31v2.02h.06c.6-1.13 2.07-2.32 4.26-2.32 4.55 0 5.39 3 5.39 6.9V23h-4.5v-6.68c0-1.6-.03-3.65-2.22-3.65-2.23 0-2.57 1.74-2.57 3.54V23h-4.5V8.25z"/></svg>
+    </a>
+  </div>
+  <div class="footer-copy">© 2026 Curwic. All rights reserved.</div>
+</footer>
+
+<!-- ============================= -->
+<!-- APPLICATION MODAL -->
+<!-- ============================= -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <div class="modal-head">
+      <div id="stepTracker" class="step-tracker">
+        <div class="step-tracker-item" data-step="1">
+          <div class="step-tracker-bar"><div class="step-tracker-fill"></div></div>
+          <div class="step-tracker-label">Profile</div>
+        </div>
+        <div class="step-tracker-item" data-step="2">
+          <div class="step-tracker-bar"><div class="step-tracker-fill"></div></div>
+          <div class="step-tracker-label">Goals</div>
+        </div>
+        <div class="step-tracker-item" data-step="3">
+          <div class="step-tracker-bar"><div class="step-tracker-fill"></div></div>
+          <div class="step-tracker-label">Aspirations</div>
+        </div>
+      </div>
+      <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+    </div>
+
+    <div class="modal-body" id="modalBody">
+      <form id="applyForm" action="https://splitforms.com/api/submit" method="POST">
+        <input type="hidden" name="access_key" value="96923e1d39c94023936ec19e47cbf2c1">
+        <!-- STEP 1 -->
+        <div class="form-step active" data-step="1">
+          <h3>Tell us about you</h3>
+          <p class="step-intro">Basic details so we know who's applying.</p>
+
+          <div class="field">
+            <label class="field-label" for="fName">Full name<span class="req">*</span></label>
+            <div class="input-wrap"><input type="text" id="fName" name="full_name" placeholder="Your full name" required></div>
+          </div>
+
+          <div class="field">
+            <label class="field-label" for="fEmail">Email<span class="req">*</span></label>
+            <div class="input-wrap"><input type="email" id="fEmail" name="email" placeholder="you@email.com" required></div>
+          </div>
+
+          <div class="field">
+            <label class="field-label" for="fPhone">Phone number<span class="req">*</span></label>
+            <div class="phone-row">
+              <div class="phone-prefix">+91</div>
+              <div class="input-wrap" style="flex:1;"><input type="tel" id="fPhone" name="phone" placeholder="98765 43210" required></div>
+            </div>
+          </div>
+
+          <div class="field" data-group="track">
+            <label class="field-label">Which practice are you applying to?<span class="req">*</span></label>
+            <div class="options-grid single">
+              <label class="option"><input type="radio" name="track" value="Coaching (Individual)" required><span class="option-mark"></span><span class="option-text">Coaching — for individuals</span></label>
+              <label class="option"><input type="radio" name="track" value="Consulting (Business)"><span class="option-mark"></span><span class="option-text">Consulting — for businesses / teams</span></label>
+              <label class="option"><input type="radio" name="track" value="Not sure yet"><span class="option-mark"></span><span class="option-text">Not sure yet</span></label>
+            </div>
+            <div class="field-error">Please choose one option.</div>
+          </div>
+
+          <div class="field">
+            <label class="field-label" for="fRole">Current role / status<span class="req">*</span></label>
+            <div class="input-wrap"><input type="text" id="fRole" name="current_role" placeholder="e.g. Product Manager, Founder, Operations Lead…" required></div>
+          </div>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="form-step" data-step="2">
+          <h3>What brings you here</h3>
+          <p class="step-intro">Help us understand what you're looking to change.</p>
+
+          <div class="field" data-group="impact_areas" data-min-checked="1">
+            <label class="field-label">Which of these would create the biggest impact for you today?<span class="req">*</span></label>
+            <div class="options-grid">
+              <label class="option"><input type="checkbox" name="impact_areas" value="Execution & Follow-Through"><span class="option-mark"></span><span class="option-text">Execution & Follow-Through</span></label>
+              <label class="option"><input type="checkbox" name="impact_areas" value="Productivity"><span class="option-mark"></span><span class="option-text">Productivity</span></label>
+              <label class="option"><input type="checkbox" name="impact_areas" value="Decision-Making Under Pressure"><span class="option-mark"></span><span class="option-text">Decision-Making Under Pressure</span></label>
+              <label class="option"><input type="checkbox" name="impact_areas" value="Workflow & Process Design"><span class="option-mark"></span><span class="option-text">Workflow & Process Design</span></label>
+              <label class="option"><input type="checkbox" name="impact_areas" value="Operational Efficiency"><span class="option-mark"></span><span class="option-text">Operational Efficiency</span></label>
+              <label class="option"><input type="checkbox" name="impact_areas" value="Team & Employee Performance"><span class="option-mark"></span><span class="option-text">Team & Employee Performance</span></label>
+              <label class="option"><input type="checkbox" name="impact_areas" value="Priority & Time Management"><span class="option-mark"></span><span class="option-text">Priority & Time Management</span></label>
+              <label class="option"><input type="checkbox" name="impact_areas" value="Communication & Coordination"><span class="option-mark"></span><span class="option-text">Communication & Coordination</span></label>
+              <label class="option"><input type="checkbox" name="impact_areas" value="Thinking Faster Under Pressure"><span class="option-mark"></span><span class="option-text">Thinking Faster Under Pressure</span></label>
+              <label class="option"><input type="checkbox" name="impact_areas" value="Structured Planning & Systems"><span class="option-mark"></span><span class="option-text">Structured Planning & Systems</span></label>
+              <label class="option"><input type="checkbox" name="impact_areas" value="Growth Readiness"><span class="option-mark"></span><span class="option-text">Growth Readiness</span></label>
+              <label class="option"><input type="checkbox" name="impact_areas" value="Measurable Results & Accountability"><span class="option-mark"></span><span class="option-text">Measurable Results & Accountability</span></label>
+            </div>
+            <div class="field-error">Please select at least one.</div>
+          </div>
+
+          <div class="field" data-group="self_statement">
+            <label class="field-label">Which statement best describes you today?<span class="req">*</span></label>
+            <div class="options-grid single">
+              <label class="option"><input type="radio" name="self_statement" value="I know more than I currently execute." required><span class="option-mark"></span><span class="option-text">I know more than I currently execute.</span></label>
+              <label class="option"><input type="radio" name="self_statement" value="I don't have the systems to keep up with my goals."><span class="option-mark"></span><span class="option-text">I don't have the systems to keep up with my goals.</span></label>
+              <label class="option"><input type="radio" name="self_statement" value="I want to make faster, better decisions."><span class="option-mark"></span><span class="option-text">I want to make faster, better decisions.</span></label>
+              <label class="option"><input type="radio" name="self_statement" value="I hesitate in high-pressure situations."><span class="option-mark"></span><span class="option-text">I hesitate in high-pressure situations.</span></label>
+              <label class="option"><input type="radio" name="self_statement" value="I want my team to execute more consistently."><span class="option-mark"></span><span class="option-text">I want my team to execute more consistently.</span></label>
+              <label class="option"><input type="radio" name="self_statement" value="I want to be more productive with less effort."><span class="option-mark"></span><span class="option-text">I want to be more productive with less effort.</span></label>
+              <label class="option"><input type="radio" name="self_statement" value="I'm trying to fix inefficiencies in my business."><span class="option-mark"></span><span class="option-text">I'm trying to fix inefficiencies in my business.</span></label>
+            </div>
+            <div class="field-error">Please choose one option.</div>
+          </div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="form-step" data-step="3">
+          <h3>Where you're headed</h3>
+          <p class="step-intro">Almost done — a few questions about your goals.</p>
+
+          <div class="field" data-group="career_goal">
+            <label class="field-label">What are you currently working towards?<span class="req">*</span></label>
+            <div class="options-grid single">
+              <label class="option"><input type="radio" name="career_goal" value="Better Personal Productivity" required><span class="option-mark"></span><span class="option-text">Better Personal Productivity</span></label>
+              <label class="option"><input type="radio" name="career_goal" value="Promotion / Career Growth"><span class="option-mark"></span><span class="option-text">Promotion / Career Growth</span></label>
+              <label class="option"><input type="radio" name="career_goal" value="Building Better Team Systems"><span class="option-mark"></span><span class="option-text">Building Better Team Systems</span></label>
+              <label class="option"><input type="radio" name="career_goal" value="Scaling Business Operations"><span class="option-mark"></span><span class="option-text">Scaling Business Operations</span></label>
+              <label class="option"><input type="radio" name="career_goal" value="Founder / Leadership Efficiency"><span class="option-mark"></span><span class="option-text">Founder / Leadership Efficiency</span></label>
+              <label class="option"><input type="radio" name="career_goal" value="Career Transition"><span class="option-mark"></span><span class="option-text">Career Transition</span></label>
+              <label class="option"><input type="radio" name="career_goal" value="Stronger Decision-Making & Execution"><span class="option-mark"></span><span class="option-text">Stronger Decision-Making & Execution</span></label>
+              <label class="option"><input type="radio" name="career_goal" value="Other"><span class="option-mark"></span><span class="option-text">Other</span></label>
+            </div>
+            <div class="field-error">Please choose one option.</div>
+          </div>
+
+          <div class="field">
+            <label class="field-label">If Curwic could help you solve ONE challenge, what would it be?<span class="req">*</span></label>
+            <div class="input-wrap">
+              <textarea name="one_challenge" maxlength="200" placeholder="I want to build a better system for staying on top of priorities…" required></textarea>
+            </div>
+            <div class="char-count"><span class="count-1">0</span>/200</div>
+            <div class="field-error">Please answer this question.</div>
+          </div>
+
+          <div class="field" data-group="commitment_level">
+            <label class="field-label">How committed are you to investing in your growth right now?<span class="req">*</span></label>
+            <div class="options-grid single">
+              <label class="option"><input type="radio" name="commitment_level" value="Exploring Options" required><span class="option-mark"></span><span class="option-text">Exploring Options</span></label>
+              <label class="option"><input type="radio" name="commitment_level" value="Somewhat Committed"><span class="option-mark"></span><span class="option-text">Somewhat Committed</span></label>
+              <label class="option"><input type="radio" name="commitment_level" value="Highly Committed"><span class="option-mark"></span><span class="option-text">Highly Committed</span></label>
+              <label class="option"><input type="radio" name="commitment_level" value="Actively Looking To Start"><span class="option-mark"></span><span class="option-text">Actively Looking To Start</span></label>
+            </div>
+            <div class="field-error">Please choose one option.</div>
+          </div>
+
+          <div class="field">
+            <label class="field-label">What made you apply to Curwic today?<span class="req">*</span></label>
+            <div class="input-wrap">
+              <textarea name="apply_reason" maxlength="200" placeholder="I want to build a better system for my team's execution…" required></textarea>
+            </div>
+            <div class="char-count"><span class="count-2">0</span>/200</div>
+            <div class="field-error">Please answer this question.</div>
+          </div>
+
+          <div class="field" data-group="consent">
+            <div class="consent-box">
+              <input type="checkbox" name="consent" value="Yes" id="consentCheck" required>
+              <p>By continuing, I accept the <a class="js-nav-modal" data-page="terms">Terms & Conditions</a> and <a class="js-nav-modal" data-page="privacy">Privacy Policy</a> and consent to being contacted via calls, messages, or email.</p>
+            </div>
+            <div class="field-error">Please accept the terms to continue.</div>
+          </div>
+
+          <div class="field">
+            <div class="consent-box">
+              <input type="checkbox" name="newsletter" value="Yes" id="newsletterCheck">
+              <p>Subscribe to our newsletter for performance insights and product updates.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-nav" id="formNav">
+          <button type="button" class="btn-back" id="backBtn">Back</button>
+          <button type="button" class="btn-next" id="nextBtn">Next</button>
+          <button type="submit" class="btn-submit" id="submitBtn" style="display:none;">Submit application</button>
+        </div>
+      </form>
+
+      <div class="form-message success" id="successMsg">
+        <div class="check-badge">✓</div>
+        <h3>Thank you for submitting</h3>
+        <p>We'll review your profile and reach out at the email or number you shared if it's a fit.</p>
+        <button type="button" class="btn-outline" id="successClose">Close</button>
+      </div>
+      <div class="form-message error" id="errorMsg">
+        <h3>Something went wrong</h3>
+        <p>Your application didn't go through. Please try again, or email us directly at hello@curwic.space.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // ── THEME TOGGLE ──
+  const root = document.documentElement;
+  const themeToggle = document.getElementById('themeToggle');
+  const themeKnob = document.getElementById('themeKnob');
+
+  function applyTheme(theme) {
+    root.setAttribute('data-theme', theme);
+    themeKnob.textContent = theme === 'light' ? '☀' : '☾';
+    try { localStorage.setItem('curwic-theme', theme); } catch (e) {}
+  }
+
+  (function initTheme() {
+    let saved = null;
+    try { saved = localStorage.getItem('curwic-theme'); } catch (e) {}
+    applyTheme(saved === 'light' || saved === 'dark' ? saved : 'dark');
+  })();
+
+  themeToggle.addEventListener('click', () => {
+    const current = root.getAttribute('data-theme');
+    applyTheme(current === 'dark' ? 'light' : 'dark');
+  });
+
+  // ── INTRO VEIL ──
+  window.addEventListener('load', () => {
+    setTimeout(() => { document.getElementById('introVeil').classList.add('hide'); }, 500);
+  });
+
+  // ── HERO GRAPHIC: generative diagnostic mark ──
+  // A small node/edge system that draws itself, then idles with a slow pulse —
+  // a visual stand-in for "scattered inputs resolving into one system."
+  (function initDiagnosticMark() {
+    const canvas = document.getElementById('diagnosticMark');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let W, H, dpr;
+    let nodes = [];
+    let edges = [];
+    let t = 0;
+    let raf = null;
+
+    function themeColor(varName) {
+      return getComputedStyle(document.documentElement).getPropertyValue(varName).trim();
+    }
+
+    function layout() {
+      const rect = canvas.parentElement.getBoundingClientRect();
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      W = rect.width; H = rect.height;
+      canvas.width = W * dpr; canvas.height = H * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+      // Scattered "input" nodes on the left arc, converging to a central
+      // "system" node, then fanning out to a tighter "output" cluster on the right.
+      const cx = W * 0.52, cy = H * 0.5;
+      nodes = [];
+      edges = [];
+
+      const inputs = 6;
+      for (let i = 0; i < inputs; i++) {
+        const angle = -2.05 + (i / (inputs - 1)) * 2.1;
+        const r = Math.min(W, H) * (0.40 + (i % 2) * 0.06);
+        nodes.push({
+          x: cx + Math.cos(angle) * -r * 0.62,
+          y: cy + Math.sin(angle) * r * 0.72,
+          r: 2.2 + (i % 3) * 0.6,
+          kind: 'in',
+          phase: Math.random() * Math.PI * 2
+        });
+      }
+
+      const core = { x: cx, y: cy, r: 5.5, kind: 'core', phase: 0 };
+      nodes.push(core);
+
+      const outputs = 4;
+      for (let i = 0; i < outputs; i++) {
+        const angle = -1.0 + (i / (outputs - 1)) * 2.0;
+        const r = Math.min(W, H) * 0.34;
+        nodes.push({
+          x: cx + Math.cos(angle) * r,
+          y: cy + Math.sin(angle) * r * 0.85,
+          r: 2.6 + (i % 2) * 0.5,
+          kind: 'out',
+          phase: Math.random() * Math.PI * 2
+        });
+      }
+
+      nodes.forEach((n, i) => {
+        if (n.kind === 'in') edges.push({ from: i, to: inputs, kind: 'in' });
+      });
+      nodes.forEach((n, i) => {
+        if (n.kind === 'out') edges.push({ from: inputs, to: i, kind: 'out' });
+      });
+    }
+
+    function draw() {
+      t += 0.008;
+      ctx.clearRect(0, 0, W, H);
+
+      const border = themeColor('--border-strong') || 'rgba(163,190,224,0.24)';
+      const accent = themeColor('--accent-tint') || '#74a8ff';
+      const gold = themeColor('--gold') || '#d8b46a';
+
+      // edges
+      edges.forEach(e => {
+        const a = nodes[e.from], b = nodes[e.to];
+        const pulse = (Math.sin(t * 1.6 + (e.from + e.to)) + 1) / 2;
+        ctx.beginPath();
+        ctx.moveTo(a.x, a.y);
+        const mx = (a.x + b.x) / 2 + Math.sin(t + e.from) * 6;
+        const my = (a.y + b.y) / 2 + Math.cos(t + e.to) * 6;
+        ctx.quadraticCurveTo(mx, my, b.x, b.y);
+        ctx.strokeStyle = e.kind === 'in'
+          ? `rgba(116,168,255,${0.10 + pulse * 0.14})`
+          : `rgba(216,180,106,${0.10 + pulse * 0.14})`;
+        ctx.lineWidth = 1;
+        ctx.stroke();
+      });
+
+      // nodes
+      nodes.forEach((n, i) => {
+        const drift = Math.sin(t * 0.9 + n.phase) * 2.2;
+        const x = n.x, y = n.y + drift;
+        let fill = border;
+        let radius = n.r;
+        if (n.kind === 'core') {
+          fill = accent;
+          radius = n.r + Math.sin(t * 1.4) * 1.1;
+          ctx.beginPath();
+          ctx.arc(x, y, radius + 9, 0, Math.PI * 2);
+          ctx.strokeStyle = 'rgba(116,168,255,0.18)';
+          ctx.lineWidth = 1;
+          ctx.stroke();
+        } else if (n.kind === 'out') {
+          fill = gold;
+        } else {
+          fill = accent;
+        }
+        ctx.beginPath();
+        ctx.arc(x, y, radius, 0, Math.PI * 2);
+        ctx.fillStyle = fill;
+        ctx.globalAlpha = n.kind === 'core' ? 1 : 0.75;
+        ctx.fill();
+        ctx.globalAlpha = 1;
+      });
+
+      raf = requestAnimationFrame(draw);
+    }
+
+    function start() {
+      cancelAnimationFrame(raf);
+      layout();
+      draw();
+    }
+
+    start();
+    window.addEventListener('resize', () => { layout(); });
+    const observer = new MutationObserver(() => {});
+    // Redraw colors immediately on theme toggle
+    document.getElementById('themeToggle')?.addEventListener('click', () => {
+      // colors are read live each frame, nothing else needed
+    });
+
+    // Pause animation when off-screen for performance
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { if (!raf) draw(); }
+        else { cancelAnimationFrame(raf); raf = null; }
+      });
+    }, { threshold: 0.05 });
+    io.observe(canvas);
+  })();
+
+  // ── CUSTOM CURSOR ──
+  const cursorDot = document.getElementById('cursorDot');
+  const cursorRing = document.getElementById('cursorRing');
+  let cx = 0, cy = 0, rx = 0, ry = 0;
+  window.addEventListener('mousemove', (e) => {
+    cx = e.clientX; cy = e.clientY;
+    cursorDot.style.left = cx + 'px'; cursorDot.style.top = cy + 'px';
+  });
+  function animateRing() {
+    rx += (cx - rx) * 0.18; ry += (cy - ry) * 0.18;
+    cursorRing.style.left = rx + 'px'; cursorRing.style.top = ry + 'px';
+    requestAnimationFrame(animateRing);
+  }
+  animateRing();
+  document.addEventListener('mouseover', (e) => {
+    if (e.target.closest('a, button, .card, .track-card, .tool-card, .faq-question, input, textarea, label')) {
+      cursorRing.classList.add('hovering');
+    }
+  });
+  document.addEventListener('mouseout', (e) => {
+    if (e.target.closest('a, button, .card, .track-card, .tool-card, .faq-question, input, textarea, label')) {
+      cursorRing.classList.remove('hovering');
+    }
+  });
+
+  // Scroll reveal (defined before router since router references revealObs)
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+  document.querySelectorAll('.programs-grid, .process-grid, .values-grid, .stats-inner, .tracks-grid, .fit-grid, .careers-grid, .tools-grid').forEach(grid => {
+    grid.querySelectorAll('.reveal').forEach((el, i) => { el.style.transitionDelay = `${i * 80}ms`; });
+  });
+
+  // ── ROUTER ──
+  const pages = document.querySelectorAll('.page');
+  function goToPage(name, skipScroll) {
+    let found = false;
+    pages.forEach(p => {
+      const match = p.dataset.page === name;
+      p.classList.toggle('active', match);
+      if (match) found = true;
+    });
+    if (!found) {
+      pages.forEach(p => p.classList.toggle('active', p.dataset.page === '404'));
+      name = '404';
+    }
+    document.querySelectorAll('.nav-links a.js-nav').forEach(a => {
+      a.classList.toggle('current', a.dataset.page === name);
+    });
+    if (!skipScroll) window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
+    try { history.replaceState(null, '', name === 'home' ? '#' : '#' + name); } catch (e) {}
+    // re-run reveal observer on newly shown elements
+    document.querySelectorAll('.page.active .reveal:not(.visible)').forEach(el => revealObs.observe(el));
+  }
+
+  document.querySelectorAll('.js-nav-anchor').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = el.dataset.anchor;
+      const doScroll = () => {
+        const target = document.getElementById(targetId);
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      };
+      if (document.getElementById('page-' + el.dataset.page).classList.contains('active')) {
+        doScroll();
+      } else {
+        goToPage(el.dataset.page);
+        setTimeout(doScroll, 60);
+      }
+      navToggle.classList.remove('open');
+      navLinksEl.classList.remove('open');
+    });
+  });
+
+  document.querySelectorAll('.js-nav').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      goToPage(el.dataset.page);
+      navToggle.classList.remove('open');
+      navLinksEl.classList.remove('open');
+    });
+  });
+
+  document.querySelectorAll('.js-tool-open').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      goToPage('tool-' + el.dataset.tool);
+    });
+  });
+
+  document.querySelectorAll('.js-nav-modal').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      closeModal();
+      goToPage(el.dataset.page);
+    });
+  });
+
+  function routeFromHash() {
+    const hash = location.hash.replace('#', '') || 'home';
+    goToPage(hash, true);
+  }
+  window.addEventListener('hashchange', routeFromHash);
+  routeFromHash();
+
+  // Mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const navLinksEl = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    navToggle.classList.toggle('open');
+    navLinksEl.classList.toggle('open');
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const btn = item.querySelector('.faq-question');
+    btn.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(o => o.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  // Character counters
+  const textareas = document.querySelectorAll('textarea[maxlength]');
+  const counts = document.querySelectorAll('.count-1, .count-2');
+  textareas.forEach((ta, i) => {
+    ta.addEventListener('input', () => { if (counts[i]) counts[i].textContent = ta.value.length; });
+  });
+
+  // ── MODAL ──
+  const modalOverlay = document.getElementById('modalOverlay');
+  const modalClose = document.getElementById('modalClose');
+  const modalBody = document.getElementById('modalBody');
+  const successClose = document.getElementById('successClose');
+
+  function openModal(preselectTrack) {
+    modalOverlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    if (preselectTrack) {
+      const radio = document.querySelector('input[name="track"][value="' + preselectTrack + '"]');
+      if (radio) radio.checked = true;
+    }
+  }
+  function closeModal() {
+    modalOverlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.js-apply-trigger').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      openModal(el.dataset.track);
+    });
+  });
+  modalClose.addEventListener('click', closeModal);
+  modalOverlay.addEventListener('click', (e) => { if (e.target === modalOverlay) closeModal(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modalOverlay.classList.contains('open')) closeModal(); });
+
+  function resetFormView() {
+    form.style.display = '';
+    document.getElementById('stepTracker').style.display = '';
+    formNav.style.display = '';
+    successMsg.classList.remove('show');
+    errorMsg.classList.remove('show');
+    form.reset();
+    counts.forEach(c => c.textContent = '0');
+    currentStep = 1;
+    showStep(1);
+  }
+  successClose.addEventListener('click', () => { closeModal(); resetFormView(); });
+
+  // ── MULTI-STEP FORM ──
+  const form = document.getElementById('applyForm');
+  const steps = Array.from(form.querySelectorAll('.form-step'));
+  const trackerItems = Array.from(document.querySelectorAll('.step-tracker-item'));
+  const backBtn = document.getElementById('backBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const submitBtn = document.getElementById('submitBtn');
+  const formNav = document.getElementById('formNav');
+  const successMsg = document.getElementById('successMsg');
+  const errorMsg = document.getElementById('errorMsg');
+  let currentStep = 1;
+
+  function showStep(n) {
+    steps.forEach(s => s.classList.toggle('active', Number(s.dataset.step) === n));
+    trackerItems.forEach(t => {
+      const s = Number(t.dataset.step);
+      t.classList.toggle('active', s === n);
+      t.classList.toggle('done', s < n);
+    });
+    backBtn.classList.toggle('show', n > 1);
+    nextBtn.style.display = n < steps.length ? 'inline-block' : 'none';
+    submitBtn.style.display = n === steps.length ? 'inline-block' : 'none';
+    modalBody.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function clearError(field) { field.classList.remove('invalid'); }
+  function setError(field) { field.classList.add('invalid'); }
+
+  function validateStep(n) {
+    const stepEl = steps.find(s => Number(s.dataset.step) === n);
+    let valid = true;
+
+    stepEl.querySelectorAll('.field').forEach(field => {
+      clearError(field);
+      const groupName = field.dataset.group;
+
+      if (groupName) {
+        const inputs = field.querySelectorAll(`[name="${groupName}"]`);
+        if (!inputs.length) return;
+        const type = inputs[0].type;
+
+        if (type === 'checkbox' && field.dataset.minChecked) {
+          const checkedCount = Array.from(inputs).filter(i => i.checked).length;
+          if (checkedCount < Number(field.dataset.minChecked)) { setError(field); valid = false; }
+        } else if (type === 'checkbox') {
+          if (!inputs[0].checked) { setError(field); valid = false; }
+        } else if (type === 'radio') {
+          const checked = Array.from(inputs).some(i => i.checked);
+          if (!checked) { setError(field); valid = false; }
+        }
+      } else {
+        const input = field.querySelector('input, textarea');
+        if (input && input.hasAttribute('required')) {
+          if (!input.checkValidity()) { setError(field); valid = false; }
+        }
+      }
+    });
+
+    return valid;
+  }
+
+  nextBtn.addEventListener('click', () => {
+    if (validateStep(currentStep)) {
+      currentStep = Math.min(currentStep + 1, steps.length);
+      showStep(currentStep);
+    }
+  });
+
+  backBtn.addEventListener('click', () => {
+    currentStep = Math.max(currentStep - 1, 1);
+    showStep(currentStep);
+  });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!validateStep(currentStep)) return;
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting…';
+
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    })
+      .then(res => {
+        if (res.ok) {
+          form.style.display = 'none';
+          document.getElementById('stepTracker').style.display = 'none';
+          formNav.style.display = 'none';
+          successMsg.classList.add('show');
+        } else {
+          errorMsg.classList.add('show');
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Submit application';
+        }
+      })
+      .catch(() => {
+        errorMsg.classList.add('show');
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit application';
+      });
+  });
+
+  showStep(1);
+
+  // ── CONTACT FORM ──
+  const contactForm = document.getElementById('contactForm');
+  const contactSuccess = document.getElementById('contactSuccess');
+  const contactError = document.getElementById('contactError');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const btn = contactForm.querySelector('.btn-submit');
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+      fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { 'Accept': 'application/json' }
+      })
+        .then(res => {
+          if (res.ok) {
+            contactForm.querySelectorAll('.field').forEach(f => f.style.display = 'none');
+            btn.style.display = 'none';
+            contactSuccess.classList.add('show');
+          } else {
+            contactError.classList.add('show');
+            btn.disabled = false;
+            btn.textContent = 'Send message';
+          }
+        })
+        .catch(() => {
+          contactError.classList.add('show');
+          btn.disabled = false;
+          btn.textContent = 'Send message';
+        });
+    });
+  }
+</script>
+</body>
+</html>
